@@ -15,5 +15,13 @@ Frontend:
 
 Backend:
   - Node.js
-  - Sails (+ express)
-  - db
+  - Express (+ Sails)
+  - db (MySQL vagy mongodb)
+  
+### Kezdeti tervek
+
+![](assets/wireframe1.png)
+
+![](assets/wireframe2.png)
+
+
