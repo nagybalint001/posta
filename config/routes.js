@@ -32,9 +32,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  },
+  '/': 'UserController.find',
 
   'GET /login': {view: 'login'},
   'POST /login': 'AuthController.login',

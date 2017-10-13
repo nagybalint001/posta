@@ -14,7 +14,7 @@ module.exports = {
 
   login: function(req, res) {
     var { name, password } = req.allParams()
-    User.findOne({name}).exec((err, user) => 
+    User.findOne({name, password}).exec((err, user) => 
       {
         if(err)
           return res.render("login", {error:"Server Error", name})
@@ -23,7 +23,7 @@ module.exports = {
           return res.render("login", {error:"Invalid Login", name})
 
         req.session.login = true;
-        return res.render("display", {value:"logged in"})
+        return res.redirect("/")
       })
   },
 
