@@ -17,10 +17,10 @@ module.exports = {
     User.findOne({name}).exec((err, user) => 
       {
         if(err)
-          return res.serverError(err)
+          return res.render("login", {error:"Server Error", name})
 
         if(!user)
-          return res.forbidden()
+          return res.render("login", {error:"Invalid Login", name})
 
         req.session.login = true;
         return res.render("display", {value:"logged in"})
