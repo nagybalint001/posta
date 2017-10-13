@@ -17,10 +17,10 @@ module.exports = {
     User.findOne({name, password}).exec((err, user) => 
       {
         if(err)
-          return res.render("login", {error:"Server Error", name})
+          return res.view("login", {error:"Server Error", name, title: "Login"})
 
         if(!user)
-          return res.render("login", {error:"Invalid Login", name})
+          return res.view("login", {error:"Invalid Login", name, title: "Login"})
 
         req.session.login = true;
         return res.redirect("/")
