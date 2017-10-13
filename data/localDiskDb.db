@@ -1,0 +1,49 @@
+{
+  "data": {
+    "auth": [],
+    "user": [
+      {
+        "name": "tomi",
+        "createdAt": "2017-10-13T15:06:07.538Z",
+        "updatedAt": "2017-10-13T15:06:07.538Z",
+        "id": 1
+      }
+    ]
+  },
+  "schema": {
+    "auth": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "user": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "auth": {},
+    "user": {
+      "id": 1
+    }
+  }
+}
