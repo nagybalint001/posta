@@ -4,9 +4,17 @@
     "user": [
       {
         "name": "tomi",
-        "createdAt": "2017-10-13T15:06:07.538Z",
-        "updatedAt": "2017-10-13T15:06:07.538Z",
+        "password": "hashed pass",
+        "createdAt": "2017-10-13T15:45:34.467Z",
+        "updatedAt": "2017-10-13T15:45:34.467Z",
         "id": 1
+      },
+      {
+        "name": "balint",
+        "password": "hashed pass",
+        "createdAt": "2017-10-13T15:49:27.223Z",
+        "updatedAt": "2017-10-13T15:49:27.223Z",
+        "id": 2
       }
     ]
   },
@@ -26,6 +34,13 @@
       }
     },
     "user": {
+      "name": {
+        "type": "string",
+        "unique": true
+      },
+      "password": {
+        "type": "string"
+      },
       "id": {
         "type": "integer",
         "autoIncrement": true,
@@ -43,7 +58,7 @@
   "counters": {
     "auth": {},
     "user": {
-      "id": 1
+      "id": 2
     }
   }
 }

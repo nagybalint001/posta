@@ -8,7 +8,26 @@
 module.exports = {
 
   attributes: {
+    name: {
+      type: 'string',
+      required: true,
+      unique: true
+    },
+    password: {
+      type: 'string',
+      required: true
+   }
+  },
 
+  customToJSON () {
+    var user = this.toObject()
+    delete user.password
+	return user
+  },
+
+  beforeCreate: (user, next) => {
+    user.password = "hashed pass"
+    next()
   }
 };
 
