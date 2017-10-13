@@ -50,7 +50,6 @@
                         		<div class="form-top-left">
                         			<h3>Login to Post IT</h3>
                             		<p>Enter your username and password to log on:</p>
-									<%= (typeof error !== 'undefined') ? error : '' %>
                         		</div>
                         		<div class="form-top-right">
                         			<i class="fa fa-lock"></i>
@@ -67,6 +66,7 @@
 			                        	<input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
 			                        </div>
 			                        <button type="submit" class="btn">Login</button>
+			                        <p style="color:red; text-align:center;"><%= (typeof error !== 'undefined') ? error : '' %></p>
 			                    </form>
 		                    </div>
                         </div>
