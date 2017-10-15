@@ -14,7 +14,7 @@ module.exports = {
 
   login: function(req, res) {
     var { name, password } = req.allParams()
-    User.findOne({name, password}).exec((err, user) => 
+    User.findOne({name}).exec((err, user) => 
       {
         if(err)
           return res.view("login", {error:"Server Error", name, title: "Login"})
@@ -22,8 +22,15 @@ module.exports = {
         if(!user)
           return res.view("login", {error:"Invalid Login", name, title: "Login"})
 
-        req.session.login = true;
-        return res.redirect("/")
+        User.checkPassword(user, password, (err, valid) => {
+          if(err)
+            return res.view("login", {error:"Server Error", name, title: "Login"})
+          if(!valid)
+            return res.view("login", {error:"Invalid Login", name, title: "Login"})
+          
+          req.session.login = true;
+          return res.redirect("/")
+        })
       })
   },
 

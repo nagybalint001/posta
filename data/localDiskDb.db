@@ -4,14 +4,14 @@
     "user": [
       {
         "name": "tomi",
-        "password": "hashed pass",
+        "password": "$2a$10$yZsk.UjJx4OlEW81QsBP9OqexiyvRTxn2WeISz5GI577.PRJheu..",
         "createdAt": "2017-10-13T15:45:34.467Z",
         "updatedAt": "2017-10-13T15:45:34.467Z",
         "id": 1
       },
       {
         "name": "balint",
-        "password": "hashed pass",
+        "password": "$2a$10$.gJaHs/tvvLDGHpZKc0cYuMx0pF06TIbMAVR7a6Sbk5S51QSkkdiu",
         "createdAt": "2017-10-13T15:49:27.223Z",
         "updatedAt": "2017-10-13T15:49:27.223Z",
         "id": 2
