@@ -34,7 +34,7 @@ module.exports.routes = {
 
   '/': 'UserController.find',
 
-  'GET /login': {view: 'login', locals: { title: "Login"}},
+  'GET /login': 'AuthController.loginForm',
   'POST /login': 'AuthController.login',
   '/logout': 'AuthController.logout',
   '/islogin': 'AuthController.islogin'

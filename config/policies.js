@@ -30,7 +30,11 @@ module.exports.policies = {
 
   user: {
     '*': 'isLogin'
+  },
+  auth: {
+    'loginForm': 'alreadyLogin'
   }
+
   /***************************************************************************
   *                                                                          *
   * Here's an example of mapping some policies to run before a controller    *
