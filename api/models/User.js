@@ -27,9 +27,16 @@ module.exports = {
   },
 
   beforeCreate: (user, next) => {
+    //TODO: lehetne policy is
+	for (i of Object.keys(user))
+    {
+      if(i != 'name' && i != 'password')	
+      	delete user[i]
+    }
+
 	bcrypt.hash(user.password, 10, function(err, hash) {
-      user.password = hash
-      next()
+      user.password = hash;
+      next();
     });
   },
 

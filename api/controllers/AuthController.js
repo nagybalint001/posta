@@ -16,6 +16,11 @@ module.exports = {
     res.view('login', {locals: { title: "Login"}})
   },
 
+  registerForm: function(req, res) {
+    res.view('register')
+  },
+
+
   login: function(req, res) {
     var { name, password } = req.allParams()
     User.findOne({name}).exec((err, user) => 

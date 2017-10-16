@@ -37,7 +37,8 @@ module.exports.routes = {
   'GET /login': 'AuthController.loginForm',
   'POST /login': 'AuthController.login',
   '/logout': 'AuthController.logout',
-  '/islogin': 'AuthController.islogin'
+  '/islogin': 'AuthController.islogin',
+  '/register': 'AuthController.registerForm' 
 
   /***************************************************************************
   *                                                                          *
