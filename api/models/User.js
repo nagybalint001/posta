@@ -27,8 +27,10 @@ module.exports = {
   },
 
   beforeCreate: (user, next) => {
-    user.password = "hashed pass"
-    next()
+	bcrypt.hash(user.password, 10, function(err, hash) {
+      user.password = hash
+      next()
+    });
   },
 
   checkPassword: (user, pass, next) => {
