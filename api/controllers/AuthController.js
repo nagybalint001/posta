@@ -38,7 +38,7 @@ module.exports = {
             return res.view("login", {error:"Invalid Login", name, title: "Login"})
           
           req.session.login = true;
-          return res.redirect("/")
+          return res.redirect("/main")
         })
       })
   },

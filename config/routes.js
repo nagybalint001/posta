@@ -38,7 +38,8 @@ module.exports.routes = {
   'POST /login': 'AuthController.login',
   '/logout': 'AuthController.logout',
   '/islogin': 'AuthController.islogin',
-  '/register': 'AuthController.registerForm' 
+  '/register': 'AuthController.registerForm',
+  'GET /main': {view: 'main', locals:{layout:false}}
 
   /***************************************************************************
   *                                                                          *
