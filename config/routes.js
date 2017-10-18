@@ -39,7 +39,7 @@ module.exports.routes = {
   '/logout': 'AuthController.logout',
   '/islogin': 'AuthController.islogin',
   '/register': 'AuthController.registerForm',
-  'GET /main': {view: 'main', locals:{layout:false}}
+  'GET /main': {view: 'main'}
 
   /***************************************************************************
   *                                                                          *
