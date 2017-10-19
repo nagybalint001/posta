@@ -6,9 +6,11 @@ body {
     color: #888;
     line-height: 30px;
     text-align: center;
-    background: url('/assets/img/backgrounds/1.jpg');
+    background: url('/images/login_bg.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
+	background-size: cover;
+	background-attachment:fixed;
+	background-position:center;
 }
 
 strong { font-weight: 500; }
