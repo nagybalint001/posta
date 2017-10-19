@@ -13,11 +13,11 @@ module.exports = {
   },
 
   loginForm: function(req, res) {
-    res.view('login', {locals: { title: "Login"}})
+    res.view('login', { title: "Login"})
   },
 
   registerForm: function(req, res) {
-    res.view('register')
+    res.view('register', { title: "Register"})
   },
 
 
