@@ -11,7 +11,7 @@
         <meta name="theme-color" content="#1e2327"/>
 
         
-        <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500"> -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         
         <!--
             Stylesheets and Preprocessors
@@ -38,11 +38,9 @@
         <link rel="stylesheet" href="/styles/bootstrap/bootstrap-grid.min.css">
         <link rel="stylesheet" href="/styles/bootstrap/bootstrap-reboot.min.css">
         <link rel="stylesheet" href="/styles/bootstrap/bootstrap.min.css">
-        <link rel="stylesheet" href="/styles/form-elements.css">
         <link rel="stylesheet" href="/styles/importer.css">
-        <link rel="stylesheet" href="/styles/main-style.css">
-        <link rel="stylesheet" href="/styles/style.css">
         <!--STYLES END-->
+        <%- stylesheets %>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -114,8 +112,9 @@
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
     <script src="/js/dependencies/jquery.min.js"></script>
+    <script src="/js/dependencies/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/scripts.js"></script>
     <!--SCRIPTS END-->
+    <%- scripts %>
   </body>
 </html>
