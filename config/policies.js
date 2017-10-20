@@ -27,15 +27,16 @@ module.exports.policies = {
   ***************************************************************************/
 
   // '*': true,
-
+  
   user: {
     '*': 'isLogin',
-    'create': true
+    'create': true,
+    'login': true,
+    'loginForm': 'alreadyLogin',
+	  'registerForm': 'alreadyLogin'
   },
 
   auth: {
-    'loginForm': 'alreadyLogin',
-	'registerForm': 'alreadyLogin'
   }
 
   /***************************************************************************

@@ -34,12 +34,12 @@ module.exports.routes = {
 
   '/': 'UserController.find',
 
-  'GET /login': 'AuthController.loginForm',
-  'POST /login': 'AuthController.login',
-  '/logout': 'AuthController.logout',
+  'GET /login': 'UserController.loginForm',
+  'POST /login': 'UserController.login',
+  '/logout': 'UserController.logout',
   '/islogin': 'AuthController.islogin',
-  '/register': 'AuthController.registerForm',
-  'GET /main': {view: 'main'}
+  '/register': 'UserController.registerForm',
+  'GET /main': 'AuthController.auth'
 
   /***************************************************************************
   *                                                                          *
