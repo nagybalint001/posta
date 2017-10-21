@@ -42,6 +42,7 @@ module.exports.routes = {
   'GET /main': 'AuthController.main',
   'GET /profil': 'UserController.profil',
   'GET /packages': 'AuthController.packages',
+  'GET /pkg': 'AuthController.pkg',
 
   /***************************************************************************
   *                                                                          *

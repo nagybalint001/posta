@@ -2,4 +2,22 @@
 body {
     padding-top: 4.5rem;
 }
+.navbar-brand{
+    font-family: Roboto;
+}
+a.nodecor{
+    color:black;
+    text-decoration: none;
+}
+a.nodecor:hover{
+    text-decoration: none;
+}
 
+/*Collapse icon*/
+[data-toggle="collapse"]:before {
+    font-family: FontAwesome;
+    content: "\f077";    /* ^ */
+}
+[data-toggle="collapse"].collapsed:before {
+    content: "\f078";    /* V */
+}

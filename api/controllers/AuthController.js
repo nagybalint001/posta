@@ -31,6 +31,9 @@ module.exports = {
 
     };
     res.view('packages', {data:tmp});
+  },
+  pkg: function(req, res){
+    res.view('package');
   }
 
 };
