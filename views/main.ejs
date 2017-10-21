@@ -1,35 +1,4 @@
-<!-- Local includes -->
-<% stylesheet('styles/local/main-style.css') %>
-
-<!-- Nav start -->
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">Post IT</a>
-        </div>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main.nav" aria-expanded="false"
-            aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse navbar-right" id="main-nav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#packages"><i class="fa fa-envelope"></i> Packages</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#profil"><i class="fa fa-user"></i> Profil (<%= req.session.user.name %>)</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav">
-                <li>
-                    <a class="nav-link" href="/logout"><i class="fa fa-sign-out"></i> Logout</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- Nav end -->
-
+<%- partial('tpl/nav') %>
 
 <div class="container">
     <div class="jumbotron">

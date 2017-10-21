@@ -7,6 +7,10 @@
 
 module.exports = {
 
+  profil: function(req, res) {
+    res.view('profil', { title: "Profil"})
+  },
+
   loginForm: function(req, res) {
     res.view('login', { title: "Login"})
   },
@@ -39,7 +43,7 @@ module.exports = {
   logout: function(req, res) {
     req.session.login = false;
     //req.session.destory();
-    res.render("display", {value:"logged out"})
+    res.redirect("/")
   }
 };
 

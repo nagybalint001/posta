@@ -39,7 +39,9 @@ module.exports.routes = {
   '/logout': 'UserController.logout',
   '/islogin': 'AuthController.islogin',
   '/register': 'UserController.registerForm',
-  'GET /main': 'AuthController.auth'
+  'GET /main': 'AuthController.main',
+  'GET /profil': 'UserController.profil',
+  'GET /packages': 'AuthController.packages',
 
   /***************************************************************************
   *                                                                          *

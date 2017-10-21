@@ -5,6 +5,7 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
+ //TODO: rename AuthController -> MainController ?!
 module.exports = {
 
   _config: {
@@ -12,17 +13,25 @@ module.exports = {
     shortcuts: false,
     rest: false
   },  
-    
+  
   islogin: function(req, res) {
-    res.render("display", {value:req.session.login})
+    var _islogin = req.session.login || false;
+    res.render("display", {value:_islogin})
   },
 
-  auth: function(req, res) {
-    if(req.session.login)
-      res.view('main')
-    else
-      res.redirect('/login')
+  main: function(req, res) {
+      res.view('main');
   },
+
+  //TODO: package controller
+  //test package view
+  packages: function(req, res){
+    var tmp = {
+
+
+    };
+    res.view('packages', {data:tmp});
+  }
 
 };
 
