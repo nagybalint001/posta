@@ -19,20 +19,14 @@ module.exports = {
     }
   },
 
-  customToJSON () {
+  customToJSON() {
     var user = this.toObject()
     delete user.password
-	  return user
+    return user
   },
 
   beforeCreate: (user, next) => {
-    //TODO: lehetne policy is
-    for (i of Object.keys(user)) {
-      if(i != 'name' && i != 'password')	
-        delete user[i]
-    }
-
-    bcrypt.hash(user.password, 10, function(err, hash) {
+    bcrypt.hash(user.password, 10, function (err, hash) {
       user.password = hash;
       next();
     });
@@ -40,13 +34,13 @@ module.exports = {
 
   checkPassword: (user, pass, next) => {
     bcrypt.compare(pass, user.password, (err, res) => {
-    if(err)
-		  next(err, false)
+      if (err)
+        next(err, false)
 
-    if(res)
-      next(null, true)
-    else
-      next(err, false)
+      if (res)
+        next(null, true)
+      else
+        next(err, false)
     })
   }
 };

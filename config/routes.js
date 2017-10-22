@@ -32,17 +32,19 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': 'UserController.find',
+  '/': '/main',
+
+  'GET /main': 'AuthController.main',
+  'GET /islogin': 'AuthController.islogin',
 
   'GET /login': 'UserController.loginForm',
   'POST /login': 'UserController.login',
-  '/logout': 'UserController.logout',
-  '/islogin': 'AuthController.islogin',
-  '/register': 'UserController.registerForm',
-  'GET /main': 'AuthController.main',
+  'GET /register': 'UserController.registerForm',
+  '/logout': 'UserController.logout',    
   'GET /profil': 'UserController.profil',
-  'GET /packages': 'AuthController.packages',
-  'GET /pkg': 'AuthController.pkg',
+
+  'GET /packages': 'PackageController.packages',
+  'GET /package': 'PackageController.package',
 
   /***************************************************************************
   *                                                                          *

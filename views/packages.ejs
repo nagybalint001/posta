@@ -3,8 +3,8 @@
     <div class="container px-0">
         <!-- Packages panel -->
         <div>
-            <form class="form-inline my-0 d-inline" action="/pkg" method="GET" >
-                <button type="submit" class="btn btn-primary">
+            <form class="form-inline my-0 d-inline" action="/package" method="GET">
+                <button type="submit" class="btn btn-primary my-2 my-sm-0">
                     <strong><i class="fa fa-plus"></i> New Package</strong>
                 </button>
             </form>
@@ -22,18 +22,31 @@
         <div id="detailed-search" class="collapse">
             <hr>
             <form class="form-inline" action="" method="GET">
-                <label class="sr-only" for="inlineFormInputGroup">Id</label>
-                <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">id</div>
-                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="id">
+                <div class="input-group my-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">Id</div>
+                    <input type="text" class="form-control" placeholder="Id">
                 </div>
-                <label class="sr-only" for="inlineFormInput">Package Name</label>
-                <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Package Name">
-                <div class="form-check mb-2 mr-sm-2 mb-sm-0">
-                    <input id="valami-chb" class="" type="checkbox">
-                    <label for="valami-chb" class=""> Valami check</label>
+                <div class="input-group my-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">Division</div>
+                    <input type="text" class="form-control" placeholder="Division">
                 </div>
-                <button type="submit" class="btn btn-primary">Search</button>
+                <div class="input-group my-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">Subject</div>
+                    <input type="text" class="form-control" placeholder="Subject">
+                </div>
+                <div class="input-group my-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">Type</div>
+                    <input type="text" class="form-control" placeholder="Type">
+                </div>
+                <div class="input-group my-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">From</div>
+                    <input type="text" class="form-control" placeholder="Date">
+                </div>
+                <div class="input-group my-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">To</div>
+                    <input type="text" class="form-control" placeholder="Date">
+                </div>
+                <button type="submit" class="btn btn-primary my-0 mt-sm-2">Search</button>
             </form>
         </div>
         <hr>
@@ -42,7 +55,7 @@
         <div id="package-list">
             <% for(var i = 0; i < 10; i++){ %>
                 <%- partial('tpl/package-item', {index:i}) %>
-            <% } %>
+                    <% } %>
         </div>
 
     </div>

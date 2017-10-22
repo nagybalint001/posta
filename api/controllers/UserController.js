@@ -35,7 +35,7 @@ module.exports = {
                 
         req.session.login = true
         req.session.user = user
-        return res.redirect("/main")
+        return res.redirect("/")
       })
     })
   },

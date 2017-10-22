@@ -28,6 +28,8 @@ module.exports.policies = {
 
   // '*': true,
   
+  '*': 'auth', 
+
   user: {
     '*': 'auth',
     'create': true,

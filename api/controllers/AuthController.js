@@ -22,19 +22,5 @@ module.exports = {
   main: function(req, res) {
       res.view('main');
   },
-
-  //TODO: package controller
-  //test package view
-  packages: function(req, res){
-    var tmp = {
-
-
-    };
-    res.view('packages', {data:tmp});
-  },
-  pkg: function(req, res){
-    res.view('package');
-  }
-
 };
 
