@@ -6,8 +6,6 @@
  */
 
 module.exports = {
-	  //TODO: package controller
-  //test package view
   packages: function(req, res){
     var tmp = {
 

@@ -19,7 +19,7 @@
             </div>
         </div>
         <!-- Packages detailed serach -->
-        <div id="detailed-search" class="collapse">
+        <div id="detailed-search" class="w-100 collapse">
             <hr>
             <form class="form-inline" action="" method="GET">
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
@@ -27,17 +27,18 @@
                     <input type="text" class="form-control" placeholder="Id">
                 </div>
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Division</div>
-                    <input type="text" class="form-control" placeholder="Division">
-                </div>
-                <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Subject</div>
-                    <input type="text" class="form-control" placeholder="Subject">
-                </div>
-                <div class="input-group my-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">Type</div>
                     <input type="text" class="form-control" placeholder="Type">
                 </div>
+                <div class="input-group my-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">Division</div>
+                    <input type="text" class="form-control" placeholder="Division">
+                </div>
+                <br>
+                <div class="input-group my-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">Subject</div>
+                    <input type="text" class="form-control" placeholder="Subject">
+                </div>                
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
                     <div class="input-group-addon">From</div>
                     <input type="text" class="form-control" placeholder="Date">
@@ -46,7 +47,11 @@
                     <div class="input-group-addon">To</div>
                     <input type="text" class="form-control" placeholder="Date">
                 </div>
-                <button type="submit" class="btn btn-primary my-0 mt-sm-2">Search</button>
+                <div class="input-group my-2 mr-sm-2 mb-sm-0">
+                    <div class="input-group-addon">Number</div>
+                    <input type="text" class="form-control" placeholder="Number">
+                </div>
+                <button type="submit" class="w-100 btn btn-primary my-0 mt-sm-2">Search</button>
             </form>
         </div>
         <hr>
@@ -55,7 +60,7 @@
         <div id="package-list">
             <% for(var i = 0; i < 10; i++){ %>
                 <%- partial('tpl/package-item', {index:i}) %>
-                    <% } %>
+            <% } %>
         </div>
 
     </div>
