@@ -9,7 +9,7 @@
         "email": "balint@posta.it",
         "phone": "",
         "password": "$2a$10$7uG0xYoDJU.8g2shI5AdY.x/psDo7/gd9h8NDLclnj46upQrqDDli",
-        "is_admin": false,
+        "is_admin": true,
         "id": 1,
         "createdAt": "2017-10-27T17:11:38.410Z",
         "updatedAt": "2017-10-27T17:11:38.410Z"
@@ -20,10 +20,21 @@
         "email": "tomi@posta.it",
         "phone": "",
         "password": "$2a$10$xzMNWnRLSpTVOHVnuQ3WNeU3RrsAHOIq1TII7oXPgmBaUlgX22j0S",
-        "is_admin": false,
+        "is_admin": true,
+        "id": 2,
         "createdAt": "2017-10-27T17:18:41.713Z",
-        "updatedAt": "2017-10-27T17:18:41.713Z",
-        "id": 2
+        "updatedAt": "2017-10-27T17:18:41.713Z"
+      },
+      {
+        "name": "user",
+        "fullname": "User",
+        "email": "",
+        "phone": "",
+        "password": "$2a$10$CdjSEen8m1WCMmNKsyy1WO3wrTiybhkjYgxIVuxCmtlgxQAiUjdWe",
+        "is_admin": false,
+        "createdAt": "2017-10-27T19:29:06.703Z",
+        "updatedAt": "2017-10-27T19:29:06.703Z",
+        "id": 3
       }
     ]
   },
@@ -95,7 +106,7 @@
     "auth": {},
     "package": {},
     "user": {
-      "id": 2
+      "id": 3
     }
   }
 }

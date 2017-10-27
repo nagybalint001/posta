@@ -39,6 +39,15 @@ module.exports = {
       })
     })
   },
+
+  create: function(req, res) {
+    User.create(req.body).exec(function(err, result){
+      if (err) {
+        //Handle Error
+      }
+      return res.redirect('/admin')
+    });
+  },
     
   logout: function(req, res) {
     req.session.login = false;

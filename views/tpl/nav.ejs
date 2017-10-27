@@ -17,6 +17,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/profil"><i class="fa fa-user"></i> Profil (<%= req.session.user.fullname %>)</a>
                 </li>
+                <% if(req.session.user.is_admin == true) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin"><i class="fa fa-lock"></i> Admin</a>
+                </li>   
+                <% } %>
             </ul>
             <ul class="navbar-nav">
                 <li>

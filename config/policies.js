@@ -35,7 +35,7 @@ module.exports.policies = {
     'create': true,
     'login': 'noAuth',
     'loginForm': 'noAuth',
-	  'registerForm': 'noAuth'
+	  'registerForm': 'admin'
   },
 
   auth: {
