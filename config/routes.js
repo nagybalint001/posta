@@ -39,8 +39,11 @@ module.exports.routes = {
 
   'GET /login': 'UserController.loginForm',
   'POST /login': 'UserController.login',
-  'GET /admin': 'UserController.admin',
   '/logout': 'UserController.logout',    
+
+  'GET /admin': 'UserController.admin',
+  'POST /user' : 'UserController.create',
+
   'GET /profil': 'UserController.profil',
 
   'GET /packages': 'PackageController.packages',

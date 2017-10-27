@@ -32,9 +32,9 @@
         "phone": "",
         "password": "$2a$10$CdjSEen8m1WCMmNKsyy1WO3wrTiybhkjYgxIVuxCmtlgxQAiUjdWe",
         "is_admin": false,
+        "id": 3,
         "createdAt": "2017-10-27T19:29:06.703Z",
-        "updatedAt": "2017-10-27T19:29:06.703Z",
-        "id": 3
+        "updatedAt": "2017-10-27T19:29:06.703Z"
       }
     ]
   },
