@@ -4,48 +4,43 @@
         <div class="card p-5">
             <h1>Package</h1>        
             <br>  
-            <form>
-                <div class="form-group row">
-                    <label for="id" class="col-sm-2 col-form-label">Id</label>
-                    <div class="col-sm-10">
-                        <input name="id" type="text" readonly class="form-control-plaintext" id="id" value="<id>">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="creator" class="col-sm-2 col-form-label">Creator</label>
-                    <div class="col-sm-10">
-                        <input name="creator" type="text" readonly class="form-control-plaintext" id="creator" value="<creator>">
-                    </div>
-                </div>
+            <form role="form" action="/package" method="post">
+                <input name="creator" type="hidden" id="creator" value="<%= req.session.user.name %>>">
                 <div class="form-group row">
                     <label for="date" class="col-sm-2 col-form-label">Date</label>
                     <div class="col-sm-10">
-                        <input name="date" type="text" readonly class="form-control-plaintext" id="date" value="<date>">
+                        <input name="date" type="date" class="form-control" id="date">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="inout" class="col-sm-2 col-form-label">In/out</label>
+                    <label for="dir" class="col-sm-2 col-form-label">Direction</label>
                     <div class="col-sm-10">
                         <label class="radio-inline">
-                            <input class="mx-2" type="radio" name="inout" value="in">
+                            <input class="mx-2" type="radio" name="dir" value="in" required>
+                            <i class="fa fa-arrow-down" aria-hidden="true"></i>
                             In
                         </label>
                         <label class="radio-inline">
-                            <input class="mx-2" type="radio" name="inout" value="out">
+                            <input class="mx-2" type="radio" name="dir" value="out" required>
+                            <i class="fa fa-arrow-up" aria-hidden="true"></i>
                             Out
                         </label>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="sender" class="col-sm-2 col-form-label">Sender</label>
+                    <label for="administrator" class="col-sm-2 col-form-label">Administrator</label>
                     <div class="col-sm-10">
-                        <input name="sender" type="text" class="form-control" id="sender" value="Mézga Géza">
+                        <select name="administrator" class="form-control" id="administrator">
+                            <option>Máris Szomszéd</option>
+                            <option>Mézga Aladár</option>
+                            <option>Blöki</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="division" class="col-sm-2 col-form-label">Division</label>
                     <div class="col-sm-10">
-                        <select name="division" class="form-control" id="division">
+                        <select name="division" class="form-control" id="division" required>
                             <option>MZ/X</option>
                             <option>RX</option>
                             <option>DX</option>
@@ -53,53 +48,85 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                        <label for="subject" class="col-sm-2 col-form-label">Subject</label>
-                        <div class="col-sm-10">
-                            <input name="subject" type="text" class="form-control" id="subject" value="-">
-                        </div>
-                    </div>
-                <div class="form-group row">
-                    <label for="number" class="col-sm-2 col-form-label">Number</label>
-                    <div class="col-sm-10">
-                        <input name="number" type="number" class="form-control" id="number" value="1239857">
-                    </div>
-                </div>
-                <div class="form-group row">
                     <label for="type" class="col-sm-2 col-form-label">Type</label>
                     <div class="col-sm-10">
-                        <input name="type" type="text" class="form-control" id="type" value="Üzenet">
+                        <input name="type" type="text" class="form-control" id="type" value="Üzenet" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="to" class="col-sm-2 col-form-label">To</label>
+                    <label for="parcelNumber" class="col-sm-2 col-form-label">Parcel number</label>
                     <div class="col-sm-10">
-                        <input name="to" type="text" class="form-control" id="to" value="A jövőbe">
+                        <input name="parcelNumber" type="text" class="form-control" id="typparcelNumbere">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="value" class="col-sm-2 col-form-label">Value (gross)</label>
+                    <label for="partner" class="col-sm-2 col-form-label">Partner</label>
                     <div class="col-sm-10">
-                        <input name="value" type="number" class="form-control" id="value" value="42.00">
+                        <input name="partner" type="text" class="form-control" id="partner" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                        <label for="administrator" class="col-sm-2 col-form-label">Administrator</label>
-                        <div class="col-sm-10">
-                            <select name="administrator" class="form-control" id="administrator">
-                                <option>Máris Szomszéd</option>
-                                <option>Mézga Aladár</option>
-                                <option>Blöki</option>
-                            </select>
-                        </div>
-                    </div>
-                <div class="form-group row">
-                    <label for="description" class="col-sm-2 col-form-label">Description</label>
+                    <label for="city" class="col-sm-2 col-form-label">City</label>
                     <div class="col-sm-10">
-                        <input name="description" type="text" class="form-control" id="description" value="104. része">
+                        <input name="city" type="text" class="form-control" id="city">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="zip" class="col-sm-2 col-form-label">Zip code</label>
+                    <div class="col-sm-10">
+                        <input name="zip" type="string" class="form-control" id="zip">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="count" class="col-sm-2 col-form-label">Count</label>
+                    <div class="col-sm-10">
+                        <input name="count" type="number" class="form-control" id="count">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="weight" class="col-sm-2 col-form-label">Weight</label>
+                    <div class="col-sm-10">
+                        <input name="weight" type="number" class="form-control" id="weight">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="value" class="col-sm-2 col-form-label">Value</label>
+                    <div class="col-sm-10">
+                        <input name="value" type="number" class="form-control" id="value">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="weightPrice" class="col-sm-2 col-form-label">Weight price</label>
+                    <div class="col-sm-10">
+                        <input name="weightPrice" type="number" class="form-control" id="weightPrice">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="total" class="col-sm-2 col-form-label">Total</label>
+                    <div class="col-sm-10">
+                        <input name="total" type="number" class="form-control" id="total">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="extraFee" class="col-sm-2 col-form-label">Extra fee</label>
+                    <div class="col-sm-10">
+                        <input name="extraFee" type="number" class="form-control" id="extraFee">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="subject" class="col-sm-2 col-form-label">Subject</label>
+                    <div class="col-sm-10">
+                        <input name="subject" type="text" class="form-control" id="subject" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="comment" class="col-sm-2 col-form-label">Comment</label>
+                    <div class="col-sm-10">
+                        <input name="comment" type="text" class="form-control" id="comment">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary float-sm-right">
-                    <i class="fa fa-floppy-o"></i>
+                    <i class="fa fa-plus"></i>
                     Save
                 </button>
             </form>

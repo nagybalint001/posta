@@ -1,7 +1,31 @@
 {
   "data": {
     "auth": [],
-    "package": [],
+    "package": [
+      {
+        "creator": "balint>",
+        "date": "2017-10-27T00:00:00.000Z",
+        "dir": "in",
+        "administrator": "Máris Szomszéd",
+        "division": "MZ/X",
+        "type": "Üzenet",
+        "parcelNumber": "",
+        "partner": "Béla Cége",
+        "city": "",
+        "zip": "",
+        "count": "",
+        "weight": "",
+        "value": "",
+        "weightPrice": "",
+        "total": "",
+        "extraFee": "",
+        "subject": "Elszámolás",
+        "comment": "",
+        "id": 1,
+        "createdAt": "2017-10-27T21:01:49.237Z",
+        "updatedAt": "2017-10-27T21:01:49.237Z"
+      }
+    ],
     "user": [
       {
         "name": "balint",
@@ -54,6 +78,60 @@
       }
     },
     "package": {
+      "creator": {
+        "type": "string"
+      },
+      "date": {
+        "type": "date"
+      },
+      "dir": {
+        "type": "string"
+      },
+      "administrator": {
+        "type": "string"
+      },
+      "division": {
+        "type": "string"
+      },
+      "type": {
+        "type": "string"
+      },
+      "parcelNumber": {
+        "type": "string"
+      },
+      "partner": {
+        "type": "string"
+      },
+      "city": {
+        "type": "string"
+      },
+      "zip": {
+        "type": "string"
+      },
+      "count": {
+        "type": "string"
+      },
+      "weight": {
+        "type": "string"
+      },
+      "value": {
+        "type": "string"
+      },
+      "weightPrice": {
+        "type": "string"
+      },
+      "total": {
+        "type": "string"
+      },
+      "extraFee": {
+        "type": "string"
+      },
+      "subject": {
+        "type": "string"
+      },
+      "comment": {
+        "type": "string"
+      },
       "id": {
         "type": "integer",
         "autoIncrement": true,
@@ -104,7 +182,9 @@
   },
   "counters": {
     "auth": {},
-    "package": {},
+    "package": {
+      "id": 1
+    },
     "user": {
       "id": 3
     }

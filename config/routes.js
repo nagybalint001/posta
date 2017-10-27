@@ -48,6 +48,7 @@ module.exports.routes = {
 
   'GET /packages': 'PackageController.packages',
   'GET /package': 'PackageController.package',
+  'POST /package': 'PackageController.create',
 
   /***************************************************************************
   *                                                                          *
