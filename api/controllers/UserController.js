@@ -15,8 +15,8 @@ module.exports = {
     res.view('login', { title: "Login"})
   },
     
-  registerForm: function(req, res) {
-    res.view('register', { title: "Register"})
+  admin: function(req, res) {
+    res.view('admin', { title: "Admin"})
   },
     
   login: function(req, res) {
