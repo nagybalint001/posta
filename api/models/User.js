@@ -13,9 +13,24 @@ module.exports = {
       required: true,
       unique: true
     },
+    fullname: {
+      type: 'string',
+      required: true,
+    },
+    email: {
+      type: 'string'
+    },
+    phone: {
+      type: 'string'
+    },
     password: {
       type: 'string',
       required: true
+    },
+    is_admin: {
+      type: 'boolean',
+      required: true,
+      defaultsTo: false
     }
   },
 

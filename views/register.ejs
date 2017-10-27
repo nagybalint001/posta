@@ -28,15 +28,23 @@
                         <form role="form" action="/api/user/create" method="post" class="login-form">
                             <div class="form-group">
                                 <label class="sr-only" for="name">Username</label>
-                                <input value="<%= (typeof error !== 'undefined') ? name : ''  %>" type="text" name="name" placeholder="Username..." class="form-username form-control" id="form-username">
+                                <input value="<%= (typeof name !== 'undefined') ? name : ''  %>" type="text" name="name" placeholder="Username..." class="form-username form-control" id="form-username" required>
                             </div>
                             <div class="form-group">
-                                <label class="sr-only" for="password">Password</label>
-                                <input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
+                                <label class="sr-only" for="fullname">Fullname</label>
+                                <input value="<%= (typeof fullname !== 'undefined') ? fullname : ''  %>" type="text" name="fullname" placeholder="Fullname..." class="form-control" id="form-fullname" required>
 							</div>
-							<div class="form-group">
-								<label class="sr-only" for="key">Key</label>
-								<input type="text" name="key" placeholder="Key" class="form-key form-control" id="form-key">
+                            <div class="form-group">
+                                <label class="sr-only" for="email">Email</label>
+                                <input value="<%= (typeof email !== 'undefined') ? email : ''  %>" type="email" name="email" placeholder="Email..." class="form-control" id="form-email">
+							</div>
+                            <div class="form-group">
+                                <label class="sr-only" for="phone">Phone</label>
+                                <input value="<%= (typeof phone !== 'undefined') ? phone : ''  %>" type="tel" name="phone" placeholder="Phone..." class="form-control" id="form-phone">
+							</div>
+                            <div class="form-group">
+                                <label class="sr-only" for="password">Password</label>
+                                <input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password" required>
 							</div>
                             <button type="submit" class="btn">Sign up</button>
                             <p style="color:red; text-align:center;"><%= (typeof error !== 'undefined') ? error : '' %></p>

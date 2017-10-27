@@ -1,19 +1,28 @@
 {
   "data": {
     "auth": [],
+    "package": [],
     "user": [
       {
-        "name": "tomi",
-        "password": "$2a$10$yZsk.UjJx4OlEW81QsBP9OqexiyvRTxn2WeISz5GI577.PRJheu..",
-        "createdAt": "2017-10-13T15:45:34.467Z",
-        "updatedAt": "2017-10-13T15:45:34.467Z",
-        "id": 1
+        "name": "balint",
+        "fullname": "Bálint",
+        "email": "balint@posta.it",
+        "phone": "",
+        "password": "$2a$10$7uG0xYoDJU.8g2shI5AdY.x/psDo7/gd9h8NDLclnj46upQrqDDli",
+        "is_admin": false,
+        "id": 1,
+        "createdAt": "2017-10-27T17:11:38.410Z",
+        "updatedAt": "2017-10-27T17:11:38.410Z"
       },
       {
-        "name": "balint",
-        "password": "$2a$10$.gJaHs/tvvLDGHpZKc0cYuMx0pF06TIbMAVR7a6Sbk5S51QSkkdiu",
-        "createdAt": "2017-10-13T15:49:27.223Z",
-        "updatedAt": "2017-10-13T15:49:27.223Z",
+        "name": "tomi",
+        "fullname": "Tomi",
+        "email": "tomi@posta.it",
+        "phone": "",
+        "password": "$2a$10$xzMNWnRLSpTVOHVnuQ3WNeU3RrsAHOIq1TII7oXPgmBaUlgX22j0S",
+        "is_admin": false,
+        "createdAt": "2017-10-27T17:18:41.713Z",
+        "updatedAt": "2017-10-27T17:18:41.713Z",
         "id": 2
       }
     ]
@@ -33,13 +42,40 @@
         "type": "datetime"
       }
     },
+    "package": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
     "user": {
       "name": {
         "type": "string",
         "unique": true
       },
+      "fullname": {
+        "type": "string"
+      },
+      "email": {
+        "type": "string"
+      },
+      "phone": {
+        "type": "string"
+      },
       "password": {
         "type": "string"
+      },
+      "is_admin": {
+        "type": "boolean",
+        "defaultsTo": false
       },
       "id": {
         "type": "integer",
@@ -57,6 +93,7 @@
   },
   "counters": {
     "auth": {},
+    "package": {},
     "user": {
       "id": 2
     }
