@@ -50,6 +50,7 @@ module.exports.routes = {
   'GET /package': 'PackageController.addPackageForm',
   'GET /package/:id': 'PackageController.modifyPackageForm',
   'POST /package': 'PackageController.create',
+  'POST /package/:id': 'PackageController.update',
 
   /***************************************************************************
   *                                                                          *

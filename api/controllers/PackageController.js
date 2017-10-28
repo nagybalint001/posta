@@ -18,7 +18,7 @@ module.exports = {
         or: q
       }).exec(function (err, packages){
         if (err) {
-          //Handle Error
+          return res.serverError()
         }
         res.view('packages', { data: packages });
       })
@@ -26,7 +26,7 @@ module.exports = {
     else{
       Package.find().exec(function (err, packages){
         if (err) {
-          //Handle Error
+          return res.serverError()
         }
         res.view('packages', { data: packages });
       })
@@ -36,9 +36,20 @@ module.exports = {
   create: function(req, res) {
     Package.create(req.body).exec(function(err, result){
       if (err) {
-        //Handle Error
+        return res.serverError()
       }
       return res.redirect('/packages')
+    });
+  },
+
+  update: function(req, res) {
+    var params = req.body;
+    delete params.creator;
+    Package.update({ id: req.param('id') }, req.body).exec(function(err, result){
+      if (err) {
+        return res.serverError()
+      }
+      return res.redirect('/packages');
     });
   },
 
@@ -47,7 +58,16 @@ module.exports = {
   },
 
   modifyPackageForm: function(req, res) {
-    return res.redirect('/api/package/' + req.param('id'))
+    Package.findOne({id: req.param('id')}).exec(function (err, record){
+      if (err) {
+        return res.serverError()    
+      }
+      else if (!record){
+        return res.notFound() 
+      }
+
+      res.view('packageEdit', { package: record })      
+    });
   }
 };
 
