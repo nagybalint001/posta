@@ -24,6 +24,29 @@
         "id": 1,
         "createdAt": "2017-10-27T21:01:49.237Z",
         "updatedAt": "2017-10-27T21:01:49.237Z"
+      },
+      {
+        "creator": "balint>",
+        "date": "2017-10-28T00:00:00.000Z",
+        "dir": "out",
+        "administrator": "Mézga Aladár",
+        "division": "MZ/X",
+        "type": "Üzenet",
+        "parcelNumber": "",
+        "partner": "Józsi",
+        "city": "",
+        "zip": "",
+        "count": "",
+        "weight": "",
+        "value": "",
+        "weightPrice": "",
+        "total": "",
+        "extraFee": "",
+        "subject": "Fontos üzenet",
+        "comment": "",
+        "id": 2,
+        "createdAt": "2017-10-28T08:40:32.661Z",
+        "updatedAt": "2017-10-28T08:40:32.661Z"
       }
     ],
     "user": [
@@ -183,7 +206,7 @@
   "counters": {
     "auth": {},
     "package": {
-      "id": 1
+      "id": 2
     },
     "user": {
       "id": 3

@@ -58,8 +58,8 @@
         <!-- Packages list -->
         <!-- kerdeses h ez hogy legyen... lehet XHR angular betoltes is  akk kereses is -->
         <div id="package-list">
-            <% for(var i = 0; i < 10; i++){ %>
-                <%- partial('tpl/package-item', {index:i}) %>
+            <% for(var i = 0; i < data.length; i++){ %>
+                <%- partial('tpl/package-item', {package:data[i]}) %>
             <% } %>
         </div>
 

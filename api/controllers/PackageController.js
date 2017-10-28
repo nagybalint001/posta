@@ -7,11 +7,13 @@
 
 module.exports = {
   packages: function(req, res){
-    var tmp = {
-
-
-    };
-    res.view('packages', { data: tmp });
+    Package.find().exec(function (err, packages){
+      if (err) {
+        //Handle Error
+      }
+      res.view('packages', { data: packages });
+      //return res.json(packages);
+    })    
   },
 
   create: function(req, res) {

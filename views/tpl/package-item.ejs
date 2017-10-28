@@ -1,13 +1,13 @@
 <div class="card my-2">
     <div class="card-header">
         <h5 class="mb-0">
-            <a class="mx-auto nodecor" href="" data-parent="#package-list" data-toggle="collapse" data-target="#collapse-<%= index %>" >
-                Collapsible Group Item #<%= index %>
+            <a class="mx-auto nodecor" href="" data-parent="#package-list" data-toggle="collapse" data-target="#collapse-<%= package.id %>" >
+                #<%= package.id %> <%= package.partner %> - <%= package.subject %> 
             </a>
         </h5>
     </div>
 
-    <div id="collapse-<%= index %>" class="collapse">
+    <div id="collapse-<%= package.id %>" class="collapse">
         <div class="card-block p-2">
             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
             non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
