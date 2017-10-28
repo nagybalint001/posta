@@ -3,7 +3,8 @@
     "auth": [],
     "package": [
       {
-        "creator": "balint>",
+        "pid": "2017/10/27/001",
+        "creator": "balint",
         "date": "2017-10-27T00:00:00.000Z",
         "dir": "in",
         "administrator": "Máris Szomszéd",
@@ -22,14 +23,15 @@
         "subject": "Elszámolás",
         "comment": "",
         "id": 1,
-        "createdAt": "2017-10-27T21:01:49.237Z",
-        "updatedAt": "2017-10-27T21:01:49.237Z"
+        "createdAt": "2017-10-28T10:47:32.021Z",
+        "updatedAt": "2017-10-28T10:47:32.021Z"
       },
       {
-        "creator": "balint>",
-        "date": "2017-10-28T00:00:00.000Z",
+        "pid": "2017/10/27/002",
+        "creator": "balint",
+        "date": "2017-10-27T00:00:00.000Z",
         "dir": "out",
-        "administrator": "Mézga Aladár",
+        "administrator": "Máris Szomszéd",
         "division": "MZ/X",
         "type": "Üzenet",
         "parcelNumber": "",
@@ -45,8 +47,32 @@
         "subject": "Fontos üzenet",
         "comment": "",
         "id": 2,
-        "createdAt": "2017-10-28T08:40:32.661Z",
-        "updatedAt": "2017-10-28T08:40:32.661Z"
+        "createdAt": "2017-10-28T10:49:06.363Z",
+        "updatedAt": "2017-10-28T10:49:06.363Z"
+      },
+      {
+        "pid": "2017/10/28/001",
+        "creator": "balint",
+        "date": "2017-10-28T00:00:00.000Z",
+        "dir": "in",
+        "administrator": "Máris Szomszéd",
+        "division": "MZ/X",
+        "type": "Üzenet",
+        "parcelNumber": "",
+        "partner": "Géza",
+        "city": "",
+        "zip": "",
+        "count": "",
+        "weight": "",
+        "value": "",
+        "weightPrice": "",
+        "total": "",
+        "extraFee": "",
+        "subject": "fontos megjegyzés",
+        "comment": "",
+        "id": 3,
+        "createdAt": "2017-10-28T10:49:23.223Z",
+        "updatedAt": "2017-10-28T10:49:23.223Z"
       }
     ],
     "user": [
@@ -101,6 +127,9 @@
       }
     },
     "package": {
+      "pid": {
+        "type": "string"
+      },
       "creator": {
         "type": "string"
       },
@@ -206,7 +235,7 @@
   "counters": {
     "auth": {},
     "package": {
-      "id": 2
+      "id": 3
     },
     "user": {
       "id": 3

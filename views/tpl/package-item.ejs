@@ -1,10 +1,10 @@
 <div class="card my-2">
     <div class="card-header">
-        <h5 class="mb-0">
+        <h6 class="mb-0">
             <a class="mx-auto nodecor" href="" data-parent="#package-list" data-toggle="collapse" data-target="#collapse-<%= package.id %>" >
-                #<%= package.id %> <%= package.partner %> - <%= package.subject %> 
+                [<%= package.pid %>] <%= package.partner %> - <%= package.subject %> 
             </a>
-        </h5>
+        </h6>
     </div>
 
     <div id="collapse-<%= package.id %>" class="collapse">

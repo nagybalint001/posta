@@ -8,6 +8,9 @@
 module.exports = {
 
   attributes: {
+    pid: {
+      type: 'string'
+    },
     creator: {
       type: 'string',
       required: true
@@ -74,6 +77,16 @@ module.exports = {
     comment: {
       type: 'string'
     }
+  },
+
+  beforeCreate: (package, next) => {
+    Package.find({date: package.date}).exec(function (err, packages){
+      var pid = package.date.toISOString().replace('-', '/').split('T')[0].replace('-', '/');
+      var tmp = "000" + (packages.length + 1);
+      pid = pid + "/" + tmp.substr(tmp.length - 3);
+      package.pid = pid;
+      next();
+    });
   }
 };
 
