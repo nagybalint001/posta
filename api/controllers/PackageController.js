@@ -23,8 +23,56 @@ module.exports = {
         res.view('packages', { data: packages });
       })
     }
-    else{
-      Package.find().exec(function (err, packages){
+    else{      
+      var q = { };
+
+      if(req.param('pid', '') != ""){
+        q.pid = { 'contains' : req.param('pid')}
+      }
+      if(req.param('creator', '') != ""){
+        q.creator = { 'contains' : req.param('creator')}
+      }
+      if(req.param('dir', '') != ""){
+        q.dir = { 'contains' : req.param('dir')}
+      }
+      if(req.param('administrator', '') != ""){
+        q.administrator = { 'contains' : req.param('administrator')}
+      }
+      if(req.param('division', '') != ""){
+        q.division = { 'contains' : req.param('division')}
+      }
+      if(req.param('type', '') != ""){
+        q.type = { 'contains' : req.param('type')}
+      }
+      if(req.param('parcelNumber', '') != ""){
+        q.parcelNumber = { 'contains' : req.param('parcelNumber')}
+      }
+      if(req.param('partner', '') != ""){
+        q.partner = { 'contains' : req.param('partner')}
+      }
+      if(req.param('city', '') != ""){
+        q.city = { 'contains' : req.param('city')}
+      }
+      if(req.param('zip', '') != ""){
+        q.zip = { 'contains' : req.param('zip')}
+      }
+      if(req.param('subject', '') != ""){
+        q.subject = { 'contains' : req.param('subject')}
+      }
+      if(req.param('comment', '') != ""){
+        q.comment = { 'contains' : req.param('comment')}
+      }
+      if(req.param('from', '') != "" && req.param('to', '') != ""){
+        q.date = { '>=' : req.param('from'), '<=' : req.param('to')}
+      } 
+      else if(req.param('from', '') != ""){
+        q.date = { '>=' : req.param('from')}
+      } 
+      else if(req.param('to', '') != ""){
+        q.date = { '<=' : req.param('to')}
+      }
+
+      Package.find(q).exec(function (err, packages){
         if (err) {
           return res.serverError()
         }
