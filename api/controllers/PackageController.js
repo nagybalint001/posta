@@ -7,13 +7,29 @@
 
 module.exports = {
   packages: function(req, res){
-    Package.find().exec(function (err, packages){
-      if (err) {
-        //Handle Error
+    if ((typeof req.param('searchId') !== 'undefined') && req.param('searchId') != "") {
+      var q = [] 
+      var tmp = req.param('searchId').split(" ");
+      for(var i = 0; i < tmp.length; i++) {
+        q.push( { pid: {'contains': tmp[i] } } )
       }
-      res.view('packages', { data: packages });
-      //return res.json(packages);
-    })    
+      Package.find({
+        or: q
+      }).exec(function (err, packages){
+        if (err) {
+          //Handle Error
+        }
+        res.view('packages', { data: packages });
+      })
+    }
+    else{
+      Package.find().exec(function (err, packages){
+        if (err) {
+          //Handle Error
+        }
+        res.view('packages', { data: packages });
+      })
+    }
   },
 
   create: function(req, res) {
