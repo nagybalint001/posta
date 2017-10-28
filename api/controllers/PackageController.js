@@ -13,6 +13,7 @@ module.exports = {
       for(var i = 0; i < tmp.length; i++) {
         q.push( { pid: {'contains': tmp[i] } } )
       }
+      // összes olyan csomag megkeresése, aminek a pid-je tartalmazza a megadott pid-ek valamelyikét (szóközzel elválasztva kell megadni)
       Package.find({
         or: q
       }).exec(function (err, packages){
@@ -41,8 +42,12 @@ module.exports = {
     });
   },
 
-  package: function(req, res){
+  addPackageForm: function(req, res){
     res.view('package');
+  },
+
+  modifyPackageForm: function(req, res) {
+    return res.redirect('/api/package/' + req.param('id'))
   }
 };
 

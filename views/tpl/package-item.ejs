@@ -2,19 +2,86 @@
     <div class="card-header">
         <h6 class="mb-0">
             <a class="mx-auto nodecor" href="" data-parent="#package-list" data-toggle="collapse" data-target="#collapse-<%= package.id %>" >
-                [<%= package.pid %>] <%= package.partner %> - <%= package.subject %> 
+                [<%= package.pid %>] 
+                <i class="fa fa-arrow-<%= (package.dir == 'in') ? "down" : 'up' %>" aria-hidden="true"></i>
+                <%= package.partner %> - <%= package.subject %> 
+                <a href="/package/<%= package.id %>"><i class="fa fa-pencil float-right" aria-hidden="true"></i></a>
+                <% if(package.total != "") { %>
+                <span class="text-danger float-right "><%= package.total %>&nbsp;&nbsp;</span>
+                <% } %>
             </a>
         </h6>
     </div>
 
     <div id="collapse-<%= package.id %>" class="collapse">
         <div class="card-block p-2">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute,
-            non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-            craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-            occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-            labore sustainable VHS.
+            <div class="d-flex flex-wrap">
+                <% if(package.division != "") { %>
+                <div class="p-2">
+                    <strong>Division:</strong> <%= package.division %>
+                </div>
+                <% } %>
+                <% if(package.type != "") { %>
+                <div class="p-2">
+                    <strong>Type:</strong> <%= package.type %>
+                </div>
+                <% } %>
+                <% if(package.administrator != "") { %>
+                <div class="p-2">
+                    <strong>Administrator:</strong> <%= package.administrator %>
+                </div>
+                <% } %>
+                <% if(package.parcelNumber != "") { %>          
+                <div class="p-2">
+                    <strong>Parcel number:</strong> <%= package.parcelNumber %>
+                </div>
+                <% } %>
+                <% if(package.city != "") { %>          
+                <div class="p-2">
+                    <strong>City:</strong> <%= package.city %>
+                </div>
+                <% } %>
+                <% if(package.zip != "") { %>          
+                <div class="p-2">
+                    <strong>Zip code:</strong> <%= package.zip %>
+                </div>
+                <% } %>
+                <% if(package.count != "") { %>          
+                <div class="p-2">
+                    <strong>Count:</strong> <%= package.count %>
+                </div>
+                <% } %>
+                <% if(package.weight != "") { %>          
+                <div class="p-2">
+                    <strong>Weight:</strong> <%= package.weight %>
+                </div>
+                <% } %>
+                <% if(package.value != "") { %>          
+                <div class="p-2">
+                    <strong>Value:</strong> <%= package.value %>
+                </div>
+                <% } %>
+                <% if(package.weightPrice != "") { %>          
+                <div class="p-2">
+                    <strong>Weight price:</strong> <%= package.weightPrice %>
+                </div>
+                <% } %>
+                <% if(package.total != "") { %>          
+                <div class="p-2">
+                    <strong>Total:</strong> <%= package.total %>
+                </div>
+                <% } %>
+                <% if(package.extraFee != "") { %>          
+                <div class="p-2">
+                    <strong>Extra fee:</strong> <%= package.extraFee %>
+                </div>
+                <% } %>
+                <% if(package.comment != "") { %>          
+                <div class="p-2">
+                    <strong>comment:</strong> <%= package.comment %>
+                </div>
+                <% } %>
+            </div>
         </div>
     </div>
 </div>

@@ -73,6 +73,30 @@
         "id": 3,
         "createdAt": "2017-10-28T10:49:23.223Z",
         "updatedAt": "2017-10-28T10:49:23.223Z"
+      },
+      {
+        "pid": "2017/10/28/002",
+        "creator": "balint",
+        "date": "2017-10-28T00:00:00.000Z",
+        "dir": "out",
+        "administrator": "Máris Szomszéd",
+        "division": "DX",
+        "type": "Üzenet",
+        "parcelNumber": "11235164156",
+        "partner": "Józsi",
+        "city": "Vác",
+        "zip": "2600",
+        "count": "",
+        "weight": "",
+        "value": "1500",
+        "weightPrice": "300",
+        "total": "2000",
+        "extraFee": "200",
+        "subject": "Gázszámla",
+        "comment": "Ez egy komment",
+        "id": 4,
+        "createdAt": "2017-10-28T17:13:43.129Z",
+        "updatedAt": "2017-10-28T17:13:43.129Z"
       }
     ],
     "user": [
@@ -235,7 +259,7 @@
   "counters": {
     "auth": {},
     "package": {
-      "id": 3
+      "id": 4
     },
     "user": {
       "id": 3

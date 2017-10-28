@@ -47,7 +47,8 @@ module.exports.routes = {
   'GET /profil': 'UserController.profil',
 
   'GET /packages': 'PackageController.packages',
-  'GET /package': 'PackageController.package',
+  'GET /package': 'PackageController.addPackageForm',
+  'GET /package/:id': 'PackageController.modifyPackageForm',
   'POST /package': 'PackageController.create',
 
   /***************************************************************************
