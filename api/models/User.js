@@ -47,6 +47,19 @@ module.exports = {
     });
   },
 
+  beforeUpdate: (user, next) =>{
+    if(user.newpassword){
+      bcrypt.hash(user.newpassword, 10, function (err, hash) {
+        user.password = hash;
+        delete user.newpassword;
+        next();
+      });
+    }
+    else{
+      next();
+    }
+  },
+
   checkPassword: (user, pass, next) => {
     bcrypt.compare(pass, user.password, (err, res) => {
       if (err)

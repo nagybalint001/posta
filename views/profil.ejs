@@ -4,7 +4,7 @@
         <div class="card p-5">
             <h1>Profil</h1>
             <br>
-            <form action="/profil/update" method="POST">
+            <form action="" method="POST">
                 <div class="form-group row">
                     <label for="id" class="col-sm-2 col-form-label">Id</label>
                     <div class="col-sm-10">
@@ -35,14 +35,9 @@
                         <input name="phone" type="tel" class="form-control" id="phone" value="<%= (typeof req.session.user.phone !== 'undefined') ? req.session.user.phone : '' %>" placeholder="Phone">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary float-sm-right">
-                    <i class="fa fa-floppy-o"></i>
-                    Save
-                </button>
-            </form>
-            <h4>Change password</h4>
-            <br>
-            <form>
+                <br>
+                <h4>Change password</h4>
+                <br>
                 <div class="form-group row">
                     <label for="oldpassword" class="col-sm-2 col-form-label">Old password</label>
                     <div class="col-sm-10">
@@ -66,5 +61,6 @@
                     Save
                 </button>
             </form>
+            <div><%= typeof info !== 'undefined' ? info : '' %></div>
         </div>
     </div>

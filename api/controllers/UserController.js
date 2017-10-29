@@ -49,29 +49,40 @@ module.exports = {
   },
 
   update: function(req, res){
+    var renderForm = function(info){
+      res.view('profil', { title: "Profil", info})
+    }
     if(typeof req.body == "undefined" 
     || req.body.id != req.session.user.id 
     || req.body.name != req.session.user.name){
-      return res.redirect('');
+      return renderform("Invalid user!")
     }
     var userNewData = {};
+
     if(req.body.fullname && req.body.fullname != '')
       userNewData.fullname = req.body.fullname;
-    if(req.body.email && req.body.email != '')
-      userNewData.email = req.body.email;
-    userNewData.phone = req.body.phone || '';
-    User.update({id:req.body.id, name:req.body.name},userNewData, function(err, results){
-      if(err){
-        console.log("err", err);
-        //TODO: session - db consistency?
-      }
-      if(results){
-        //refresh session user
-        req.session.user = results[0];
-        return res.redirect('/profil');
-      }
-    });
 
+    userNewData.email = req.body.email || '';
+    userNewData.phone = req.body.phone || '';
+
+    var updateUser = function (newdata) {
+      User.update({ id: req.body.id, name: req.body.name }, newdata, function (err, results) {
+        if (err) {
+          console.log("err", err);
+          //TODO: session - db consistency?
+        }
+        if (results) {
+          //refresh session user
+          req.session.user = results[0];
+          renderForm("alles OK");
+        }
+      });
+    }
+    // TODO check old password to update
+    // userNewData.newpassword = ...
+    // userNewData.newpassword - clear text 
+    //    (user model beforeUpdate - hash, change)
+    updateUser(userNewData);
   },
     
   logout: function(req, res) {
