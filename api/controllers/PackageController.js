@@ -7,13 +7,20 @@
 
 module.exports = {
   packages: function(req, res){
-    if ((typeof req.param('searchId') !== 'undefined') && req.param('searchId') != "") {
+    if (req.param('search', '') != "") {
       var q = [] 
-      var tmp = req.param('searchId').split(" ");
+      //explode query
+      var tmp = req.param('search').split(" ");
       for(var i = 0; i < tmp.length; i++) {
-        q.push( { pid: {'contains': tmp[i] } } )
+        q.push( { pid: {'contains': tmp[i] } } );
+        q.push( { partner: {'contains': tmp[i] } } );
+        q.push( { subject: {'contains': tmp[i] } } );
       }
-      // összes olyan csomag megkeresése, aminek a pid-je tartalmazza a megadott pid-ek valamelyikét (szóközzel elválasztva kell megadni)
+      /**
+       * összes olyan csomag megkeresése, 
+       * aminek a (pid/partner/subject)-je tartalmazza a megadott 
+       * pid-ek valamelyikét (szóközzel elválasztva kell megadni)
+       */ 
       Package.find({
         or: q
       }).exec(function (err, packages){

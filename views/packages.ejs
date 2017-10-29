@@ -10,7 +10,7 @@
             </a>
             <div class="d-inline float-sm-right">
                 <form class="form-inline my-0 d-inline" method="GET">
-                    <input name="searchId" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" value="<%= (typeof req.param('searchId') !== 'undefined') ? req.param('searchId') : ''  %>">
+                    <input name="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" value="<%= (typeof req.param('searchId') !== 'undefined') ? req.param('searchId') : ''  %>">
                     <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
                 </form>
                 <button id="detailed" type="button" class="btn btn-primary collapsed" data-toggle="collapse" data-target="#detailed-search">
@@ -19,7 +19,7 @@
             </div>
         </div>
         <!-- Packages detailed serach -->
-        <div id="detailed-search" class="w-100 collapse">
+        <div id="detailed-search" class="w-100 <%= req.param('pid', '') == '' ? 'collapse' : '' %>">
             <hr>
             <form class="form-inline" method="GET">
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">

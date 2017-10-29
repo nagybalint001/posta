@@ -1,13 +1,13 @@
 <div class="card my-2">
     <div class="card-header">
         <h6 class="mb-0">
-            <a class="mx-auto nodecor" href="" data-parent="#package-list" data-toggle="collapse" data-target="#collapse-<%= package.id %>" >
+            <a class="mx-auto nodecor collapsed" href="" data-parent="#package-list" data-toggle="collapse" data-target="#collapse-<%= package.id %>" >
                 [<%= package.pid %>] 
                 <i class="fa fa-arrow-<%= (package.dir == 'in') ? "down" : 'up' %>" aria-hidden="true"></i>
                 <%= package.partner %> - <%= package.subject %> 
                 <a href="/package/<%= package.id %>"><i class="fa fa-pencil float-right" aria-hidden="true"></i></a>
                 <% if(package.total != "") { %>
-                <span class="text-danger float-right "><%= package.total %>&nbsp;&nbsp;</span>
+                <span class="text-danger mx-2 float-right "><%= package.total %></span>
                 <% } %>
             </a>
         </h6>
