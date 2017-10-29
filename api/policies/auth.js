@@ -9,7 +9,7 @@
  */
 module.exports = function(req, res, next) {
 
-  if (req.session.login) {
+  if ((typeof req.session.user !== 'undefined')) {
     return next();
   }
 

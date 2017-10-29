@@ -33,7 +33,6 @@ module.exports = {
         if(!valid)
           return res.view("login", {error:"Invalid Login", name, title: "Login"})
                 
-        req.session.login = true
         req.session.user = user
         return res.redirect("/")
       })
@@ -48,11 +47,40 @@ module.exports = {
       return res.redirect('/admin')
     });
   },
+
+  update: function(req, res){
+    if(typeof req.body == "undefined" 
+    || req.body.id != req.session.user.id 
+    || req.body.name != req.session.user.name){
+      return res.redirect('');
+    }
+    var userNewData = {};
+    if(req.body.fullname && req.body.fullname != '')
+      userNewData.fullname = req.body.fullname;
+    if(req.body.email && req.body.email != '')
+      userNewData.email = req.body.email;
+    userNewData.phone = req.body.phone || '';
+    User.update({id:req.body.id, name:req.body.name},userNewData, function(err, results){
+      if(err){
+        console.log("err", err);
+        //TODO: session - db consistency?
+      }
+      if(results){
+        //refresh session user
+        req.session.user = results[0];
+        return res.redirect('/profil');
+      }
+    });
+
+  },
     
   logout: function(req, res) {
-    req.session.login = false;
-    //req.session.destory();
-    res.redirect("/")
+    req.session.destroy(function (err) {
+      if(err){
+        console.log("logout err: ", err);
+      }
+			return res.redirect('/');
+		});
   }
 };
 

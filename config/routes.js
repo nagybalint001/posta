@@ -45,6 +45,7 @@ module.exports.routes = {
   'POST /user' : 'UserController.create',
 
   'GET /profil': 'UserController.profil',
+  'POST /profil/update': 'UserController.update',
 
   'GET /packages': 'PackageController.packages',
   'GET /package': 'PackageController.addPackageForm',

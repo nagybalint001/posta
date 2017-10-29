@@ -15,7 +15,7 @@ module.exports = {
   },  
   
   islogin: function(req, res) {
-    var _islogin = req.session.login || false;
+    var _islogin = (typeof req.session.user !== 'undefined');
     res.render("display", {value:_islogin})
   },
 
