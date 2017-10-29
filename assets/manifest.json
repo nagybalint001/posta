@@ -1,0 +1,26 @@
+{
+    "name": "Post IT",
+    "short_name": "Post IT",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#e9ecef",
+    "theme_color": "#1e2327",
+    "description": "A package manager app.",
+    "icons": [{
+      "src": "images/ico/icon-57.png",
+      "sizes": "57x57",
+      "type": "image/png"
+    }, {
+      "src": "images/ico/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }, {
+      "src": "images/ico/icon-114.png",
+      "sizes": "114x114",
+      "type": "image/png"
+    }, {
+      "src": "images/ico/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }]
+  }
