@@ -12,10 +12,12 @@ module.exports = {
       //explode query
       var tmp = req.param('search').split(" ");
       for(var i = 0; i < tmp.length; i++) {
+        if(tmp[i] == "")
+          continue;
         q.push( { pid: {'contains': tmp[i] } } );
-        q.push( { partner: {'contains': tmp[i] } } );
-        q.push( { subject: {'contains': tmp[i] } } );
       }
+      q.push( { partner: {'contains': req.param('search') } } );
+      q.push( { subject: {'contains': req.param('search') } } );
       /**
        * összes olyan csomag megkeresése, 
        * aminek a (pid/partner/subject)-je tartalmazza a megadott 

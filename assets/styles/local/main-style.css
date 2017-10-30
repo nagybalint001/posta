@@ -21,3 +21,9 @@ a.nodecor:hover{
 [data-toggle="collapse"].collapsed:before {
     content: "\f078";    /* V */
 }
+.fa-arrow-up {
+	color: red;
+}
+.fa-arrow-down{
+	color: green;
+}
