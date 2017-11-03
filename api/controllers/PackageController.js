@@ -102,8 +102,11 @@ module.exports = {
       var _export = req.param('export');
       if(_export && _export == 'csv'){
         // export - csv format 
+        if(Object.keys(packages).length === 0)//check packages - empty 
+          packages = {empty:'empty'};
         var csvdata = json2csv({data:packages});
-        res.end(csvdata, 'UTF-8');
+        res.attachment('export.csv');//download
+        res.end(csvdata, 'utf-8');
       }
       else{
         // render view
