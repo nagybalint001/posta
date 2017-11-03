@@ -7,8 +7,15 @@
 
 module.exports = {
   packages: function(req, res){
+    var q;
     if (req.param('search', '') != "") {
-      var q = [] 
+      /**
+       * Gyors keresés:
+       * összes olyan csomag megkeresése, 
+       * aminek a (pid/partner/subject)-je tartalmazza a megadott 
+       * pid-ek valamelyikét (szóközzel elválasztva kell megadni)
+       */
+      q = [];
       //explode query
       var tmp = req.param('search').split(" ");
       for(var i = 0; i < tmp.length; i++) {
@@ -18,23 +25,14 @@ module.exports = {
       }
       q.push( { partner: {'contains': req.param('search') } } );
       q.push( { subject: {'contains': req.param('search') } } );
-      /**
-       * összes olyan csomag megkeresése, 
-       * aminek a (pid/partner/subject)-je tartalmazza a megadott 
-       * pid-ek valamelyikét (szóközzel elválasztva kell megadni)
-       */ 
-      Package.find({
-        or: q
-      }).exec(function (err, packages){
-        if (err) {
-          return res.serverError()
-        }
-        res.view('packages', { data: packages });
-      })
-    }
-    else{      
-      var q = { };
 
+      q = {or : q};
+    }
+    else{     
+      /**
+       * Részletes :) lekérdezés
+       */ 
+      q = { };
       if(req.param('pid', '') != ""){
         q.pid = { 'contains' : req.param('pid')}
       }
@@ -80,14 +78,27 @@ module.exports = {
       else if(req.param('to', '') != ""){
         q.date = { '<=' : req.param('to')}
       }
-
-      Package.find(q).exec(function (err, packages){
-        if (err) {
-          return res.serverError()
-        }
-        res.view('packages', { data: packages });
-      })
     }
+    /**
+     * Lekérdezés
+     */
+    var page = +req.param('page') || 1 ;
+    // create query for page links
+    var paginateparams = req.allParams();
+      delete paginateparams.page;
+      paginatebasequery = "?";
+      for(key in paginateparams)
+        paginatebasequery += key + "=" + paginateparams[key] + "&";
+      paginatebasequery += "page=";
+    Package
+    .find(q)
+    .paginate({page, limit: 1})
+    .exec(function (err, packages){
+      if (err) {
+        return res.serverError()
+      }
+      res.view('packages', { data: packages, page, paginatebasequery});
+    })
   },
 
   create: function(req, res) {
