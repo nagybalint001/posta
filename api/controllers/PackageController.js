@@ -1,3 +1,5 @@
+var json2csv = require('json2csv');
+
 /**
  * PackageController
  *
@@ -84,20 +86,29 @@ module.exports = {
      */
     var page = +req.param('page') || 1 ;
     // create query for page links
-    var paginateparams = req.allParams();
-      delete paginateparams.page;
-      paginatebasequery = "?";
-      for(key in paginateparams)
-        paginatebasequery += key + "=" + paginateparams[key] + "&";
-      paginatebasequery += "page=";
+    var baseparams = req.allParams();
+      delete baseparams.page;
+      basequery = "?";
+      for(key in baseparams){
+        basequery += key + "=" + baseparams[key] + "&";
+      }
     Package
     .find(q)
-    .paginate({page, limit: 1})
+    .paginate({page, limit: 2})
     .exec(function (err, packages){
       if (err) {
         return res.serverError()
       }
-      res.view('packages', { data: packages, page, paginatebasequery});
+      var _export = req.param('export');
+      if(_export && _export == 'csv'){
+        // export - csv format 
+        var csvdata = json2csv({data:packages});
+        res.end(csvdata, 'UTF-8');
+      }
+      else{
+        // render view
+        res.view('packages', { data: packages, page, basequery});
+      }
     })
   },
 
