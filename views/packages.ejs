@@ -2,7 +2,7 @@
 
     <div class="container px-0">
         <!-- Packages panel -->
-        <div>
+        <div class="d-print-none">
             <a href="/package" class="nodecor">
                 <button class="btn btn-primary my-2 my-sm-0">
                     <strong><i class="fa fa-plus"></i> <%= __('New Package') %></strong>
@@ -24,7 +24,7 @@
             </div>
         </div>
         <!-- Packages detailed serach -->
-        <div id="detailed-search" class="w-100 <%= req.param('pid', '') == '' ? 'collapse' : '' %>">
+        <div id="detailed-search" class="d-print-none w-100 <%= req.param('pid', '') == '' ? 'collapse' : '' %>">
             <hr>
             <form class="form-inline" method="GET">
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
@@ -87,7 +87,7 @@
                 <button type="submit" class="w-100 btn btn-primary my-0 mt-sm-2"><%= __('Search') %></button>
             </form>
         </div>
-        <hr>
+        <hr class="d-print-none">
         <!-- Packages list -->
         <!-- kerdeses h ez hogy legyen... lehet XHR angular betoltes is  akk kereses is -->
         <div id="package-list">
@@ -95,11 +95,11 @@
                 <%- partial('tpl/package-item', {package:data[i]}) %>
             <% } %>
         </div>
-        <nav>
+        <nav class="d-print-none">
             <ul class="pagination justify-content-center">
                 <li class="page-item <%= (page <= 1) ? 'disabled' : ''%>">
                     <a class="page-link" href="<%= basequery + 'page=' + (page-1) %>">
-                        <i class="fa fa-chevron-left"> <%= __('Prev') %></i>
+                        <i class="fa fa-chevron-left"></i> <%= __('Prev') %>
                     </a>
                 </li>
                 <li class="page-item disabled" >
