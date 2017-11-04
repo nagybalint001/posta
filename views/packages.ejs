@@ -5,21 +5,21 @@
         <div>
             <a href="/package" class="nodecor">
                 <button class="btn btn-primary my-2 my-sm-0">
-                    <strong><i class="fa fa-plus"></i> New Package</strong>
+                    <strong><i class="fa fa-plus"></i> <%= __('New Package') %></strong>
                 </button>
             </a>
             <div class="d-inline float-sm-right">
                 <a href="<%= basequery + 'export=csv&page=' + (page) %>" class="nodecor">
                     <button class="btn btn-primary my-2 my-sm-0">
-                        <i class="fa fa-file-excel-o"></i> Export csv   
+                        <i class="fa fa-file-excel-o"></i> <%= __('Export csv') %>   
                     </button>
                 </a>
                 <form class="form-inline my-0 d-inline" method="GET">
-                    <input name="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" value="<%= (typeof req.param('search') !== 'undefined') ? req.param('search') : ''  %>">
+                    <input name="search" class="form-control mr-sm-2" type="text" placeholder="<%= __('Search') %>" aria-label="Search" value="<%= (typeof req.param('search') !== 'undefined') ? req.param('search') : ''  %>">
                     <button class="btn btn-primary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
                 </form>
                 <button id="detailed" type="button" class="btn btn-primary collapsed" data-toggle="collapse" data-target="#detailed-search">
-                    Detailed
+                    <%= __('Detailed') %>
                 </button>
             </div>
         </div>
@@ -28,63 +28,63 @@
             <hr>
             <form class="form-inline" method="GET">
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Pid</div>
-                    <input type="text" class="form-control" placeholder="Pid" name="pid" value="<%= req.param('pid', '') %>">
+                    <div class="input-group-addon"><%= __('Pid') %></div>
+                    <input type="text" class="form-control" placeholder="<%= __('Pid') %>" name="pid" value="<%= req.param('pid', '') %>">
                 </div>
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Creator</div>
-                    <input type="text" class="form-control" placeholder="Creator" name="creator" value="<%= req.param('creator', '') %>">
+                    <div class="input-group-addon"><%= __('Creator') %></div>
+                    <input type="text" class="form-control" placeholder="<%= __('Creator') %>" name="creator" value="<%= req.param('creator', '') %>">
                 </div>
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Direction</div>
-                    <input type="text" class="form-control" placeholder="Direction" name="dir" value="<%= req.param('dir', '') %>">
+                    <div class="input-group-addon"><%= __('Direction') %></div>
+                    <input type="text" class="form-control" placeholder="<%= __('Direction') %>" name="dir" value="<%= req.param('dir', '') %>">
                 </div>
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Administrator</div>
-                    <input type="text" class="form-control" placeholder="Administrator" name="administrator" value="<%= req.param('administrator', '') %>">
+                    <div class="input-group-addon"><%= __('Administrator') %></div>
+                    <input type="text" class="form-control" placeholder="<%= __('Administrator') %>" name="administrator" value="<%= req.param('administrator', '') %>">
                 </div>
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Division</div>
-                    <input type="text" class="form-control" placeholder="Division" name="division" value="<%= req.param('division', '') %>">
+                    <div class="input-group-addon"><%= __('Division') %></div>
+                    <input type="text" class="form-control" placeholder="<%= __('Division') %>" name="division" value="<%= req.param('division', '') %>">
                 </div>
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Type</div>
-                    <input type="text" class="form-control" placeholder="Type" name="type" value="<%= req.param('type', '') %>">
+                    <div class="input-group-addon"><%= __('Type') %></div>
+                    <input type="text" class="form-control" placeholder="<%= __('Type') %>" name="type" value="<%= req.param('type', '') %>">
                 </div>
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Number</div>
-                    <input type="text" class="form-control" placeholder="Parcel number" name="parcelNumber" value="<%= req.param('parcelNumber', '') %>">
+                    <div class="input-group-addon"><%= __('Number') %></div>
+                    <input type="text" class="form-control" placeholder="<%= __('Parcel number') %>" name="parcelNumber" value="<%= req.param('parcelNumber', '') %>">
                 </div>
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Partner</div>
-                    <input type="text" class="form-control" placeholder="Partner" name="partner" value="<%= req.param('partner', '') %>">
+                    <div class="input-group-addon"><%= __('Partner') %></div>
+                    <input type="text" class="form-control" placeholder="<%= __('Partner') %>" name="partner" value="<%= req.param('partner', '') %>">
                 </div>
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">City</div>
-                    <input type="text" class="form-control" placeholder="City" name="city" value="<%= req.param('city', '') %>">
+                    <div class="input-group-addon"><%= __('City') %></div>
+                    <input type="text" class="form-control" placeholder="<%= __('City') %>" name="city" value="<%= req.param('city', '') %>">
                 </div>
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Zip</div>
-                    <input type="text" class="form-control" placeholder="Zip code" name="zip" value="<%= req.param('zip', '') %>">
+                    <div class="input-group-addon"><%= __('Zip code') %></div>
+                    <input type="text" class="form-control" placeholder="<%= __('Zip code') %>" name="zip" value="<%= req.param('zip', '') %>">
                 </div>
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Subject</div>
-                    <input type="text" class="form-control" placeholder="Subject" name="subject" value="<%= req.param('subject', '') %>">
+                    <div class="input-group-addon"><%= __('Subject') %></div>
+                    <input type="text" class="form-control" placeholder="<%= __('Subject') %>" name="subject" value="<%= req.param('subject', '') %>">
                 </div>
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">Comment</div>
-                    <input type="text" class="form-control" placeholder="Comment" name="comment" value="<%= req.param('comment', '') %>">
+                    <div class="input-group-addon"><%= __('Comment') %></div>
+                    <input type="text" class="form-control" placeholder="<%= __('Comment') %>" name="comment" value="<%= req.param('comment', '') %>">
                 </div>      
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">From</div>
-                    <input type="date" class="form-control" placeholder="Date" name="from" value="<%= req.param('from', '') %>">
+                    <div class="input-group-addon"><%= __('From') %></div>
+                    <input type="date" class="form-control" placeholder="<%= __('Date') %>" name="from" value="<%= req.param('from', '') %>">
                 </div>
                 <div class="input-group my-2 mr-sm-2 mb-sm-0">
-                    <div class="input-group-addon">To</div>
-                    <input type="date" class="form-control" placeholder="Date" name="to" value="<%= req.param('to', '') %>">
+                    <div class="input-group-addon"><%= __('To') %></div>
+                    <input type="date" class="form-control" placeholder="<%= __('Date') %>" name="to" value="<%= req.param('to', '') %>">
                 </div>
                 <br>
-                <button type="submit" class="w-100 btn btn-primary my-0 mt-sm-2">Search</button>
+                <button type="submit" class="w-100 btn btn-primary my-0 mt-sm-2"><%= __('Search') %></button>
             </form>
         </div>
         <hr>
@@ -99,7 +99,7 @@
             <ul class="pagination justify-content-center">
                 <li class="page-item <%= (page <= 1) ? 'disabled' : ''%>">
                     <a class="page-link" href="<%= basequery + 'page=' + (page-1) %>">
-                        <i class="fa fa-chevron-left"> Prev</i>
+                        <i class="fa fa-chevron-left"> <%= __('Prev') %></i>
                     </a>
                 </li>
                 <li class="page-item disabled" >
@@ -107,7 +107,7 @@
                 </li>
                 <li class="page-item">
                     <a class="page-link" href="<%= basequery + 'page=' + (page+1) %>">
-                        Next <i class="fa fa-chevron-right"></i>
+                        <%= __('Next') %> <i class="fa fa-chevron-right"></i>
                     </a>
                 </li>
             </ul>

@@ -12,20 +12,20 @@
         <div class="collapse navbar-collapse navbar-right" id="main-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="/packages"><i class="fa fa-envelope"></i> Packages</a>
+                    <a class="nav-link" href="/packages"><i class="fa fa-envelope"></i> <%= __('Packages') %></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/profil"><i class="fa fa-user"></i> Profil (<%= req.session.user.fullname %>)</a>
+                    <a class="nav-link" href="/profil"><i class="fa fa-user"></i> <%= __('Profil (%s)', req.session.user.fullname) %></a>
                 </li>
                 <% if(req.session.user.is_admin == true) { %>
                 <li class="nav-item">
-                    <a class="nav-link" href="/admin"><i class="fa fa-lock"></i> Admin</a>
+                    <a class="nav-link" href="/admin"><i class="fa fa-lock"></i> <%= __('Admin') %></a>
                 </li>   
                 <% } %>
             </ul>
             <ul class="navbar-nav">
                 <li>
-                    <a class="nav-link" href="/logout"><i class="fa fa-sign-out"></i> Logout</a>
+                    <a class="nav-link" href="/logout"><i class="fa fa-sign-out"></i> <%= __('Logout') %></a>
                 </li>
             </ul>
         </div>

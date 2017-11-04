@@ -5,51 +5,51 @@
 
 <div class="container">
     <div class="card p-5">
-        <h1>Admin</h1>
+        <h1><%= __('Admin') %></h1>
         <br>
         <form role="form" action="/user" method="post">
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="name">Username</label>
+                <label class="col-sm-2 col-form-label" for="name"><%= __('Username') %></label>
                 <div class="col-sm-10">
-                    <input value="<%= (typeof name !== 'undefined') ? name : ''  %>" type="text" name="name" placeholder="Username..." class="form-control" id="form-username" required>
+                    <input value="<%= (typeof name !== 'undefined') ? name : ''  %>" type="text" name="name" placeholder="<%= __('Username') %>..." class="form-control" id="form-username" required>
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="fullname">Fullname</label>
+                <label class="col-sm-2 col-form-label" for="fullname"><%= __('Fullname') %></label>
                 <div class="col-sm-10">
-                    <input value="<%= (typeof fullname !== 'undefined') ? fullname : ''  %>" type="text" name="fullname" placeholder="Fullname..." class="form-control" id="form-fullname" required>
+                    <input value="<%= (typeof fullname !== 'undefined') ? fullname : ''  %>" type="text" name="fullname" placeholder="<%= __('Fullname') %>..." class="form-control" id="form-fullname" required>
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="email">Email</label>
+                <label class="col-sm-2 col-form-label" for="email"><%= __('Email') %></label>
                 <div class="col-sm-10">
-                    <input value="<%= (typeof email !== 'undefined') ? email : ''  %>" type="email" name="email" placeholder="Email..." class="form-control" id="form-email">
+                    <input value="<%= (typeof email !== 'undefined') ? email : ''  %>" type="email" name="email" placeholder="<%= __('Email') %>..." class="form-control" id="form-email">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="phone">Phone</label>
+                <label class="col-sm-2 col-form-label" for="phone"><%= __('Phone') %></label>
                 <div class="col-sm-10">
-                    <input value="<%= (typeof phone !== 'undefined') ? phone : ''  %>" type="tel" name="phone" placeholder="Phone..." class="form-control" id="form-phone">
+                    <input value="<%= (typeof phone !== 'undefined') ? phone : ''  %>" type="tel" name="phone" placeholder="<%= __('Phone') %>..." class="form-control" id="form-phone">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="password">Password</label>
+                <label class="col-sm-2 col-form-label" for="password"><%= __('Password') %></label>
                 <div class="col-sm-10">
                     <input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password" required>
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="is_admin">User role</label>
+                <label class="col-sm-2 col-form-label" for="is_admin"><%= __('User role') %></label>
                 <div class="col-sm-10">
                     <select id="form-admin" name="is_admin" class="form-control">
-                        <option value="false">User</option>
-                        <option value="true">Admin</option>
+                        <option value="false"><%= __('User') %></option>
+                        <option value="true"><%= __('Admin') %></option>
                     </select>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary float-sm-right">                
                 <i class="fa fa-user-plus"></i>
-                Add user
+                <%= __('Add user') %>
             </button>
             <p style="color:red; text-align:center;"><%= (typeof error !== 'undefined') ? error : '' %></p>
         </form>

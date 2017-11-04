@@ -2,38 +2,38 @@
 
     <div class="container">
         <div class="card p-5">
-            <h1>Package</h1>        
+            <h1><%= __('Package') %></h1>        
             <br>  
             <form role="form" action="/package/<%= package.id %>" method="post">
                 <div class="form-group row">
-                    <label for="creator" class="col-sm-2 col-form-label">Creator</label>                    
+                    <label for="creator" class="col-sm-2 col-form-label"><%= __('Creator') %></label>                    
                     <div class="col-sm-10">
                         <input name="creator" type="text" id="creator" value="<%= package.creator %>" readonly class="form-control-plaintext">                    
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="date" class="col-sm-2 col-form-label">Date</label>
+                    <label for="date" class="col-sm-2 col-form-label"><%= __('Date') %></label>
                     <div class="col-sm-10">
                         <input name="date" type="date" class="form-control" id="date" value="<%= package.date.toISOString().split('T')[0] %>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="dir" class="col-sm-2 col-form-label">Direction</label>
+                    <label for="dir" class="col-sm-2 col-form-label"><%= __('Direction') %></label>
                     <div class="col-sm-10">
                         <label class="radio-inline">
                             <input class="mx-2" type="radio" name="dir" value="in" required <%= (package.dir == "in") ? "checked" : "" %>>
                             <i class="fa fa-arrow-down" aria-hidden="true"></i>
-                            In
+                            <%= __('In') %>
                         </label>
                         <label class="radio-inline">
                             <input class="mx-2" type="radio" name="dir" value="out" required <%= (package.dir == "out") ? "checked" : "" %>>
                             <i class="fa fa-arrow-up" aria-hidden="true"></i>
-                            Out
+                            <%= __('Out') %>
                         </label>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="administrator" class="col-sm-2 col-form-label">Administrator</label>
+                    <label for="administrator" class="col-sm-2 col-form-label"><%= __('Administrator') %></label>
                     <div class="col-sm-10">
                         <select name="administrator" class="form-control" id="administrator">
                             <option <%= (package.administrator == "Máris Szomszéd") ? "selected" : "" %>>Máris Szomszéd</option>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="division" class="col-sm-2 col-form-label">Division</label>
+                    <label for="division" class="col-sm-2 col-form-label"><%= __('Division') %></label>
                     <div class="col-sm-10">
                         <select name="division" class="form-control" id="division" required>
                             <option <%= (package.division == "MZ/X") ? "selected" : "" %>>MZ/X</option>
@@ -53,86 +53,86 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="type" class="col-sm-2 col-form-label">Type</label>
+                    <label for="type" class="col-sm-2 col-form-label"><%= __('Type') %></label>
                     <div class="col-sm-10">
                         <input name="type" type="text" class="form-control" id="type" value="Üzenet" required value="<%= package.type %>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="parcelNumber" class="col-sm-2 col-form-label">Parcel number</label>
+                    <label for="parcelNumber" class="col-sm-2 col-form-label"><%= __('Parcel number') %></label>
                     <div class="col-sm-10">
                         <input name="parcelNumber" type="text" class="form-control" id="typparcelNumbere" value="<%= package.parcelNumber %>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="partner" class="col-sm-2 col-form-label">Partner</label>
+                    <label for="partner" class="col-sm-2 col-form-label"><%= __('Partner') %></label>
                     <div class="col-sm-10">
                         <input name="partner" type="text" class="form-control" id="partner" required value="<%= package.partner %>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="city" class="col-sm-2 col-form-label">City</label>
+                    <label for="city" class="col-sm-2 col-form-label"><%= __('City') %></label>
                     <div class="col-sm-10">
                         <input name="city" type="text" class="form-control" id="city" value="<%= package.city %>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="zip" class="col-sm-2 col-form-label">Zip code</label>
+                    <label for="zip" class="col-sm-2 col-form-label"><%= __('Zip code') %></label>
                     <div class="col-sm-10">
                         <input name="zip" type="string" class="form-control" id="zip" value="<%= package.zip %>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="count" class="col-sm-2 col-form-label">Count</label>
+                    <label for="count" class="col-sm-2 col-form-label"><%= __('Count') %></label>
                     <div class="col-sm-10">
                         <input name="count" type="number" class="form-control" id="count" value="<%= package.count %>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="weight" class="col-sm-2 col-form-label">Weight</label>
+                    <label for="weight" class="col-sm-2 col-form-label"><%= __('Weight') %></label>
                     <div class="col-sm-10">
                         <input name="weight" type="number" class="form-control" id="weight" value="<%= package.weight %>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="value" class="col-sm-2 col-form-label">Value</label>
+                    <label for="value" class="col-sm-2 col-form-label"><%= __('Value') %></label>
                     <div class="col-sm-10">
                         <input name="value" type="number" class="form-control" id="value" value="<%= package.value %>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="weightPrice" class="col-sm-2 col-form-label">Weight price</label>
+                    <label for="weightPrice" class="col-sm-2 col-form-label"><%= __('Weight price') %></label>
                     <div class="col-sm-10">
                         <input name="weightPrice" type="number" class="form-control" id="weightPrice" value="<%= package.weightPrice %>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="total" class="col-sm-2 col-form-label">Total</label>
+                    <label for="total" class="col-sm-2 col-form-label"><%= __('Total') %></label>
                     <div class="col-sm-10">
                         <input name="total" type="number" class="form-control" id="total" value="<%= package.total %>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="extraFee" class="col-sm-2 col-form-label">Extra fee</label>
+                    <label for="extraFee" class="col-sm-2 col-form-label"><%= __('Extra fee') %></label>
                     <div class="col-sm-10">
                         <input name="extraFee" type="number" class="form-control" id="extraFee" value="<%= package.extraFee %>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="subject" class="col-sm-2 col-form-label">Subject</label>
+                    <label for="subject" class="col-sm-2 col-form-label"><%= __('Subject') %></label>
                     <div class="col-sm-10">
                         <input name="subject" type="text" class="form-control" id="subject" required value="<%= package.subject %>">
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="comment" class="col-sm-2 col-form-label">Comment</label>
+                    <label for="comment" class="col-sm-2 col-form-label"><%= __('Comment') %></label>
                     <div class="col-sm-10">
                         <input name="comment" type="text" class="form-control" id="comment" value="<%= package.comment %>">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary float-sm-right">
                     <i class="fa fa-floppy-o"></i>
-                    Save
+                    <%= __('Save') %>
                 </button>
             </form>
         </div>
