@@ -92,9 +92,10 @@ module.exports = {
       for(key in baseparams){
         basequery += key + "=" + baseparams[key] + "&";
       }
+    var pagelimit = 2;
     Package
     .find(q)
-    .paginate({page, limit: 2})
+    .paginate({page, limit: pagelimit})
     .exec(function (err, packages){
       if (err) {
         return res.serverError()
@@ -109,8 +110,12 @@ module.exports = {
         res.end(csvdata, 'utf-8');
       }
       else{
-        // render view
-        res.view('packages', { data: packages, page, basequery});
+        Package.count(q).exec(function(err, count){
+          if (err) { return console.log(err); }
+          var maxpage = Math.ceil(count/pagelimit);
+          // render view
+          res.view('packages', { data: packages, page, maxpage, basequery});
+        })
       }
     })
   },
