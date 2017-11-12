@@ -7,10 +7,12 @@ https://app.swaggerhub.com/apis/posta1/posta/1.0.0
 Feladatok nyilvántartása VSTS segítségével:
 https://posta1.visualstudio.com/Posta
 
+[CHANGELOG](./CHANGELOG.md)
+
 ### Architektúra:
 
 Frontend:
-  - Angular.js
+  - html, ejs
   - Bootstrap
 
 Backend:
@@ -18,7 +20,7 @@ Backend:
   - Sails
   - mongodb
   
-### Kezdeti tervek
+### Tervek
 
 ![](assets/wireframe1.png)
 
