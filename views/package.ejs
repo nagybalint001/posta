@@ -31,9 +31,9 @@
                     <label for="administrator" class="col-sm-2 col-form-label"><%= __('Administrator') %></label>
                     <div class="col-sm-10">
                         <select name="administrator" class="form-control" id="administrator">
-                            <option>Máris Szomszéd</option>
-                            <option>Mézga Aladár</option>
-                            <option>Blöki</option>
+                            <% for(var i = 0; i < administrators.length; i++){ %>
+                                <option><%= administrators[i].name %></option>
+                            <% } %>
                         </select>
                     </div>
                 </div>
@@ -41,9 +41,9 @@
                     <label for="division" class="col-sm-2 col-form-label"><%= __('Division') %></label>
                     <div class="col-sm-10">
                         <select name="division" class="form-control" id="division" required>
-                            <option>MZ/X</option>
-                            <option>RX</option>
-                            <option>DX</option>
+                            <% for(var i = 0; i < divisions.length; i++){ %>
+                                <option><%= divisions[i].name %></option>
+                            <% } %>
                         </select>
                     </div>
                 </div>

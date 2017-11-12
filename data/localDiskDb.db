@@ -1,6 +1,46 @@
 {
   "data": {
+    "administrator": [
+      {
+        "name": "Máris Szomszéd",
+        "id": 1,
+        "createdAt": "2017-11-12T10:06:12.176Z",
+        "updatedAt": "2017-11-12T10:06:12.176Z"
+      },
+      {
+        "name": "Mézga Aladár",
+        "id": 2,
+        "createdAt": "2017-11-12T10:06:21.692Z",
+        "updatedAt": "2017-11-12T10:06:21.692Z"
+      },
+      {
+        "name": "Blöki",
+        "id": 3,
+        "createdAt": "2017-11-12T10:06:29.745Z",
+        "updatedAt": "2017-11-12T10:06:29.745Z"
+      }
+    ],
     "auth": [],
+    "division": [
+      {
+        "name": "RX",
+        "id": 1,
+        "createdAt": "2017-11-12T10:05:01.704Z",
+        "updatedAt": "2017-11-12T10:05:01.704Z"
+      },
+      {
+        "name": "DX",
+        "id": 2,
+        "createdAt": "2017-11-12T10:05:05.509Z",
+        "updatedAt": "2017-11-12T10:05:05.509Z"
+      },
+      {
+        "name": "MZ/X",
+        "id": 3,
+        "createdAt": "2017-11-12T10:05:51.582Z",
+        "updatedAt": "2017-11-12T10:05:51.582Z"
+      }
+    ],
     "package": [
       {
         "pid": "2017/10/27/001",
@@ -8,7 +48,7 @@
         "date": "2017-10-27T00:00:00.000Z",
         "dir": "in",
         "administrator": "Máris Szomszéd",
-        "division": "MZ/X",
+        "division": "DX",
         "type": "Üzenet",
         "parcelNumber": "",
         "partner": "Béla Cége",
@@ -24,7 +64,7 @@
         "comment": "",
         "id": 1,
         "createdAt": "2017-10-28T10:47:32.021Z",
-        "updatedAt": "2017-10-28T10:47:32.021Z"
+        "updatedAt": "2017-11-12T10:26:10.776Z"
       },
       {
         "pid": "2017/10/27/002",
@@ -136,7 +176,43 @@
     ]
   },
   "schema": {
+    "administrator": {
+      "name": {
+        "type": "string",
+        "unique": true
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
     "auth": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "division": {
+      "name": {
+        "type": "string",
+        "unique": true
+      },
       "id": {
         "type": "integer",
         "autoIncrement": true,
@@ -262,6 +338,12 @@
       "id": 4
     },
     "user": {
+      "id": 3
+    },
+    "administrator": {
+      "id": 3
+    },
+    "division": {
       "id": 3
     }
   }

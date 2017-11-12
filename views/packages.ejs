@@ -41,20 +41,28 @@
                 </div>
                 <div class="input-group my-2 mb-sm-0 col-md-4 col-sm-6">
                     <div class="input-group-addon"><%= __('Administrator') %></div>
-                    <select name="administrator" class="form-control" id="administrator" value="<%= req.param('administrator', '') %>">
+                    <select name="administrator" class="form-control" id="administrator">
                         <option selected value> -- <%= __('select an option') %> -- </option>
-                        <option>Máris Szomszéd</option>
-                        <option>Mézga Aladár</option>
-                        <option>Blöki</option>
+                        <% for(var i = 0; i < administrators.length; i++){ 
+                            if (req.param('administrator', '') == administrators[i].name) { %>
+                                <option selected><%= administrators[i].name %></option>
+                            <% } else { %>
+                                <option><%= administrators[i].name %></option>
+                        <%  }
+                        } %>
                     </select>
                 </div>
                 <div class="input-group my-2 mb-sm-0 col-md-4 col-sm-6">
                     <div class="input-group-addon"><%= __('Division') %></div>
-                    <select name="division" class="form-control" id="division" value="<%= req.param('division', '') %>">
-                        <option selected value> -- <%= __('select an option') %> -- </option>
-                        <option>MZ/X</option>
-                        <option>RX</option>
-                        <option>DX</option>
+                    <select name="division" class="form-control" id="division">
+                        <option selected value> -- <%= __('select an option') %> -- </option>                                                    
+                        <% for(var i = 0; i < administrators.length; i++){ 
+                            if (req.param('division', '') == divisions[i].name) { %>
+                                <option selected><%= divisions[i].name %></option>
+                            <% } else { %>
+                                <option><%= divisions[i].name %></option>
+                        <%  }
+                        } %>
                     </select>
                 </div>
                 <div class="input-group my-2 mb-sm-0 col-md-4 col-sm-6">

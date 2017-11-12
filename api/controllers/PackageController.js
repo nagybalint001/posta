@@ -92,7 +92,7 @@ module.exports = {
       for(key in baseparams){
         basequery += key + "=" + baseparams[key] + "&";
       }
-    var pagelimit = 2;
+    var pagelimit = 5;
     Package
     .find(q)
     .paginate({page, limit: pagelimit})
@@ -114,7 +114,11 @@ module.exports = {
           if (err) { return console.log(err); }
           var maxpage = Math.ceil(count/pagelimit);
           // render view
-          res.view('packages', { data: packages, page, maxpage, basequery});
+          Administrator.find().exec(function (err, administrators) {
+            Division.find().exec(function(err2, divisions) {
+              res.view('packages', { data: packages, page, maxpage, basequery, administrators, divisions});
+            })
+          })
         })
       }
     })
@@ -141,7 +145,12 @@ module.exports = {
   },
 
   addPackageForm: function(req, res){
-    res.view('package');
+    
+    Administrator.find().exec(function (err, administrators) {
+      Division.find().exec(function(err2, divisions) {
+        res.view('package', {administrators, divisions } );
+      })
+    })
   },
 
   modifyPackageForm: function(req, res) {
@@ -152,8 +161,11 @@ module.exports = {
       else if (!record){
         return res.notFound() 
       }
-
-      res.view('packageEdit', { package: record })      
+      Administrator.find().exec(function (err, administrators) {
+        Division.find().exec(function(err2, divisions) {
+          res.view('packageEdit', { package: record, administrators, divisions })  
+        })
+      })     
     });
   }
 };
