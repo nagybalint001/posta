@@ -33,3 +33,7 @@ a.nodecor:hover{
         display: block;
     }
 }
+
+.hidden{
+    display: none;
+}

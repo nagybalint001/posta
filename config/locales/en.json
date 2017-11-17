@@ -61,5 +61,9 @@
 	"Extra fee": "Extra fee",
 	"Comment": "Comment",
 
-	"select an option": "select an option"
+	"select an option": "select an option",
+
+	"letter": "Letter",
+	"invoice": "Invoice",
+	"package": "package"
 }

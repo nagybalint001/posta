@@ -1,7 +1,6 @@
 {
 	"Post It package manager": "Post It küldemény kezelő",
 	"Lorem ipsum dolor sit amet": "Lorem ipsum dolor sit amet random szöveg",
-
 	"Packages": "Küldemények",
 	"Package": "Küldemény",
 	"Profil": "Profil",
@@ -9,10 +8,8 @@
 	"Logout": "Kijelentkezés",
 	"Save": "Mentés",
 	"Add user": "Felhasználó hozzáadása",
-
 	"Prev": "Előző",
 	"Next": "Következő",
-
 	"Login": "Bejelentkezés",
 	"Login to Post IT": "Post IT Bejelentkezés",
 	"Enter your username and password to log on:": "Add meg a felhasználóneved és jelszavad a bejelentkezéshez:",
@@ -22,7 +19,6 @@
 	"Detailed": "Részletes",
 	"From": "tól",
 	"To": "ig",
-
 	"Id": "Id",
 	"Username": "Felhasználónév",
 	"Fullname": "Teljes név",
@@ -32,13 +28,11 @@
 	"User role": "Jogosultság",
 	"Admin": "Admin",
 	"User": "Felhasználó",
-
 	"Change password": "Jelszó megváltoztatása",
 	"Old password": "Régi jelszó",
 	"New password": "Új jelszó",
 	"Confirm password": "Jelszó megerősítése",
 	"New Password (confirm)": "Új jelszó (megerősítés)",
-
 	"Creator": "Létrehozó",
 	"Pid": "Iktatószám",
 	"Date": "Dátum",
@@ -61,6 +55,9 @@
 	"Extra fee": "Külön díj",
 	"Comment": "Komment",
 	"Number": "Number",
-	
-	"select an option": "válasszon egyet"
+	"select an option": "válasszon egyet",
+	"letter": "Levél",
+	"invoice": "Számla",
+	"package": "Csomag",
+	"Üzenet": "Üzenet"
 }
