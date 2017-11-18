@@ -25,13 +25,21 @@
 - Jelszó változtatás kliens oldalról: a bejelentkezett felhasználó a profil oldalon módosíthatja saját jelszavát (BT)
 - UI: aprobb javítások, fejlesztések
 
-## it.5 (2017/10/30 - 2017/10/5)
+## it.5 (2017/10/30 - 2017/11/5)
 - Lapozás: csomaglista, és a keresés eredményének lapozhatóvá tétele (BT)
 - CSV exportálás: adott csomaglista exportálása .csv formátumba (HB)
 - Lokalizáció: angol és magyar nyelv, alapértelmezetten angol (NB)
 - Oldal nyomtatás: CSS print (HB)
 
-## it.6 (2017/10/6 - 2017/10/12)
+## it.6 (2017/11/6 - 2017/11/12)
 - Lapozás: oldalszám számításának javítása, keresés esetén (HB)
-- UI: részletes keresésnélv valamint csomag felvételekor adminisztrátor és divízió választása legördülő listából, apróbb javítások...
+- UI: részletes keresésnél, valamint csomag felvételekor adminisztrátor és divízió választása legördülő listából, apróbb javítások...
 - Adminisztrátorok és diviziók adatbázisba szervezése (NB)
+
+## it.7 (2017/11/13 - 2017/11/19)
+- Egyéb küldeménytípusok (levél, csomag, számla, ...): típústól függő beviteli mezők dinamikus változtatása
+- Divíziók hozzáadása Admin felületről
+- Adminisztrátorok hozzáadása Admin felületről
+- Felhasználók, és adataik listázása (lapozás funkcióval)
+- Admin felületről elérhető felhasználó lista
+- Új csomag hozzáadásakor (üresen hagyott dátum esetén) keletkező Invalid Date hiba javítása
