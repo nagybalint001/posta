@@ -125,6 +125,9 @@ module.exports = {
   },
 
   create: function(req, res) {
+    /*IF invalid date THEN date.now*/
+    if(new Date(req.body.date) == "Invalid Date")
+      req.body.date = new Date().toISOString();
     Package.create(req.body).exec(function(err, result){
       if (err) {
         return res.serverError()
