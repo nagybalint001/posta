@@ -6,8 +6,14 @@
 <div class="container">
     <div class="card p-5">
         <h1><%= __('Admin') %></h1>
+        <hr class="w-100">
+        <br>
+        <a href="/admin/users" class="btn btn-primary float-sm-right">
+            <i class="fa fa-users"></i> <%= __('Users') %>
+        </a>
         <br>
         <form role="form" action="/user" method="post">
+            <h2><%= __('Add user') %></h2>
             <div class="form-group row">
                 <label class="col-sm-2 col-form-label" for="name"><%= __('Username') %></label>
                 <div class="col-sm-10">
@@ -52,6 +58,36 @@
                 <%= __('Add user') %>
             </button>
             <p style="color:red; text-align:center;"><%= (typeof error !== 'undefined') ? error : '' %></p>
+        </form>
+        <form role="form" action="/division" method="post">
+            <h2><%= __('Add division') %></h2>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="form-divisionName"><%= __('Division name') %></label>
+                <div class="col-sm-10">
+                    <input value="<%= (typeof divisionName !== 'undefined') ? divisionName : ''  %>" 
+                            type="text" name="name" placeholder="<%= __('Division name') %>..." 
+                            class="form-control" id="form-divisionName" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary float-sm-right">                
+                <i class="fa fa-plus"></i>
+                <%= __('Add division') %>
+            </button>
+        </form>
+        <form role="form" action="/administrator" method="post">
+            <h2><%= __('Add administrator') %></h2>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label" for="form-administratorName"><%= __('Administrator name') %></label>
+                <div class="col-sm-10">
+                    <input value="<%= (typeof administratorName !== 'undefined') ? administratorName : ''  %>"
+                            type="text" name="name" placeholder="<%= __('Administrator name') %>..." 
+                            class="form-control" id="form-administratorName" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary float-sm-right">                
+                <i class="fa fa-plus"></i>
+                <%= __('Add administrator') %>
+            </button>
         </form>
     </div>
 </div>

@@ -18,6 +18,30 @@ module.exports = {
   admin: function(req, res) {
     res.view('admin', { title: "Admin"})
   },
+
+  users: function(req, res){
+    /**
+     * Lekérdezés
+     */
+    var page = +req.param('page') || 1 ;
+    // create query for page links
+    var basequery = "?";
+    var pagelimit = 5;
+    User
+    .find()
+    .paginate({page, limit: pagelimit})
+    .exec(function (err, users){
+      if (err) {
+        return res.serverError()
+      }
+      User.count().exec(function(err, count){
+        if (err) { return console.log(err); }
+        var maxpage = Math.ceil(count/pagelimit);
+        // render view
+        res.view('users', { data: users, page, maxpage, basequery});
+      })
+    })
+  },
     
   login: function(req, res) {
     var { name, password } = req.allParams()

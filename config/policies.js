@@ -35,12 +35,23 @@ module.exports.policies = {
     'create': true,
     'login': 'noAuth',
     'loginForm': 'noAuth',
-	  'registerForm': 'admin'
+    'admin': 'admin',
+    'registerForm': 'admin',
+    'create': 'admin',
+    'users': 'admin'
   },
 
   auth: {
     '*': 'auth',
     'islogin': true
+  },
+
+  division: {
+    'create': 'admin'
+  },
+
+  administrator: {
+    'create': 'admin'
   }
 
   /***************************************************************************

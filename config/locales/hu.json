@@ -59,5 +59,10 @@
 	"letter": "Levél",
 	"invoice": "Számla",
 	"package": "Csomag",
-	"Üzenet": "Üzenet"
+	"Üzenet": "Üzenet",
+	"Add division": "Divízió hozzáadása",
+	"Add administrator": "Adminisztrátor hozzáadása",
+	"Administrator name": "Adminisztrátor név",
+	"Division name": "Divízió név",
+	"Users": "Felhasználók"
 }

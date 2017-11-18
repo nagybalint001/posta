@@ -42,7 +42,10 @@ module.exports.routes = {
   '/logout': 'UserController.logout',    
 
   'GET /admin': 'UserController.admin',
+  'GET /admin/users': 'UserController.users',
   'POST /user' : 'UserController.create',
+  'POST /division': 'DivisionController.create',
+  'POST /administrator': 'AdministratorController.create',
 
   'GET /profil': 'UserController.profil',
   'POST /profil': 'UserController.update',

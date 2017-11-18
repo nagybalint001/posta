@@ -1,0 +1,31 @@
+<div class="card my-2">
+    <div class="card-header">
+        <h6 class="mb-0">
+            <a class="mx-auto nodecor collapsed" href="" data-parent="#user-list" data-toggle="collapse" data-target="#collapse-<%= user.id %>" >
+                [<%= user.name %>] - <%= user.fullname %>
+            </a>
+        </h6>
+    </div>
+
+    <div id="collapse-<%= user.id %>" class="collapse">
+        <div class="card-block p-2">
+            <div class="d-flex flex-wrap">
+                <% if(user.email != "") { %>
+                <div class="p-2">
+                    <strong><%= __('Email') %>:</strong> <%= user.email %>
+                </div>
+                <% } %>
+                <% if(user.phone != "") { %>
+                <div class="p-2">
+                    <strong><%= __('Phone') %>:</strong> <%= user.phone %>
+                </div>
+                <% } %>
+                <% if(user.is_admin != "") { %>
+                <div class="p-2">
+                    <strong><%= __('User role') %>:</strong> <%= user.is_admin ? __('Admin') : __('User') %>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>

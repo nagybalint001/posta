@@ -65,5 +65,12 @@
 
 	"letter": "Letter",
 	"invoice": "Invoice",
-	"package": "package"
+	"package": "package",
+
+	"Add division": "Add division",
+	"Add administrator": "Add administrator",
+	"Administrator name": "Administrator name",
+	"Division name": "Division name",
+
+	"Users": "Users"
 }
