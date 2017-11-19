@@ -139,6 +139,49 @@
         "updatedAt": "2017-10-28T17:13:43.129Z"
       }
     ],
+    "type": [
+      {
+        "name": "invoice",
+        "fields": [
+          "city",
+          "zip",
+          "count",
+          "value",
+          "total",
+          "extraFee",
+          "comment"
+        ],
+        "id": 2,
+        "createdAt": "2017-11-19T12:05:50.854Z",
+        "updatedAt": "2017-11-19T12:05:50.854Z"
+      },
+      {
+        "name": "letter",
+        "fields": [
+          "city",
+          "zip",
+          "extraFee",
+          "comment"
+        ],
+        "id": 3,
+        "createdAt": "2017-11-19T12:06:29.097Z",
+        "updatedAt": "2017-11-19T12:06:29.097Z"
+      },
+      {
+        "name": "package",
+        "fields": [
+          "parcelNumber",
+          "city",
+          "zip",
+          "count",
+          "weight",
+          "weightPrice"
+        ],
+        "id": 4,
+        "createdAt": "2017-11-19T12:07:02.688Z",
+        "updatedAt": "2017-11-19T12:07:02.688Z"
+      }
+    ],
     "user": [
       {
         "name": "balint",
@@ -297,6 +340,27 @@
         "type": "datetime"
       }
     },
+    "type": {
+      "name": {
+        "type": "string",
+        "unique": true
+      },
+      "fields": {
+        "type": "array"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
     "user": {
       "name": {
         "type": "string",
@@ -345,6 +409,9 @@
     },
     "division": {
       "id": 3
+    },
+    "type": {
+      "id": 4
     }
   }
 }

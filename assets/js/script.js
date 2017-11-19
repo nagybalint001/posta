@@ -1,8 +1,11 @@
-var typeInputs = {
-    'invoice': ['city', 'zip', 'count', 'value', 'total', 'extraFee', 'comment'],
-    'letter': ['city', 'zip', 'extraFee', 'comment'],
-    'package': ['parcelNumber', 'city', 'zip', 'count', 'weight', 'weightPrice']
+var typeInputs = {    
 }
+
+io.socket.get('/api/type', function (body, response) {
+    body.forEach(function(item) {
+        typeInputs[item.name] = item.fields;
+    })
+});
 
 function changePackageInputs(selected){
     var els = document.querySelectorAll('.form-group.input-more .form-control');
