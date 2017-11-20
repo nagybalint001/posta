@@ -89,6 +89,102 @@
         "id": 3,
         "createdAt": "2017-11-20T08:18:40.405Z",
         "updatedAt": "2017-11-20T08:18:40.405Z"
+      },
+      {
+        "creator": "balint",
+        "date": "2017-11-10T00:00:00.000Z",
+        "dir": "out",
+        "type": "package",
+        "administrator": "Mézga Aladár",
+        "division": "RX",
+        "partner": "Béla",
+        "subject": "Bicikli",
+        "parcelNumber": "",
+        "city": "Vác",
+        "zip": "2600",
+        "count": "1",
+        "weight": "26",
+        "value": "",
+        "weightPrice": "500",
+        "total": "",
+        "extraFee": "",
+        "comment": "",
+        "pid": "2017/11/10/001",
+        "createdAt": "2017-11-20T11:57:24.255Z",
+        "updatedAt": "2017-11-20T11:57:24.255Z",
+        "id": 4
+      },
+      {
+        "creator": "balint",
+        "date": "2017-11-20T00:00:00.000Z",
+        "dir": "in",
+        "type": "invoice",
+        "administrator": "Máris Szomszéd",
+        "division": "RX",
+        "partner": "Józsi",
+        "subject": "Gázszámla",
+        "parcelNumber": "",
+        "city": "",
+        "zip": "",
+        "count": "",
+        "weight": "",
+        "value": "",
+        "weightPrice": "",
+        "total": "96000",
+        "extraFee": "",
+        "comment": "",
+        "pid": "2017/11/20/003",
+        "createdAt": "2017-11-20T11:59:23.724Z",
+        "updatedAt": "2017-11-20T11:59:23.724Z",
+        "id": 5
+      },
+      {
+        "creator": "balint",
+        "date": "2017-11-20T00:00:00.000Z",
+        "dir": "in",
+        "type": "letter",
+        "administrator": "Máris Szomszéd",
+        "division": "DX",
+        "partner": "Géza",
+        "subject": "Fontos üzenet",
+        "parcelNumber": "",
+        "city": "",
+        "zip": "",
+        "count": "",
+        "weight": "",
+        "value": "",
+        "weightPrice": "",
+        "total": "",
+        "extraFee": "",
+        "comment": "",
+        "pid": "2017/11/20/004",
+        "createdAt": "2017-11-20T12:00:10.264Z",
+        "updatedAt": "2017-11-20T12:00:10.264Z",
+        "id": 6
+      },
+      {
+        "creator": "balint",
+        "date": "2017-11-20T00:00:00.000Z",
+        "dir": "out",
+        "type": "letter",
+        "administrator": "Blöki",
+        "division": "MZ/X",
+        "partner": "Béla",
+        "subject": "Elszámolás",
+        "parcelNumber": "",
+        "city": "",
+        "zip": "",
+        "count": "",
+        "weight": "",
+        "value": "",
+        "weightPrice": "",
+        "total": "",
+        "extraFee": "",
+        "comment": "",
+        "pid": "2017/11/20/005",
+        "createdAt": "2017-11-20T12:01:34.235Z",
+        "updatedAt": "2017-11-20T12:01:34.235Z",
+        "id": 7
       }
     ],
     "type": [
@@ -160,13 +256,46 @@
       {
         "name": "user",
         "fullname": "User",
-        "email": "",
+        "email": "user@example.com",
         "phone": "",
         "password": "$2a$10$CdjSEen8m1WCMmNKsyy1WO3wrTiybhkjYgxIVuxCmtlgxQAiUjdWe",
         "is_admin": false,
         "id": 3,
         "createdAt": "2017-10-27T19:29:06.703Z",
-        "updatedAt": "2017-10-27T19:29:06.703Z"
+        "updatedAt": "2017-11-20T11:50:12.494Z"
+      },
+      {
+        "name": "berci",
+        "fullname": "Berci",
+        "email": "berci@post.it",
+        "phone": "",
+        "password": "$2a$10$7L6c.4.3wyBCiOAwTDhjsOIlirVFnABjrvkatUf6ETPppA8Em1V0q",
+        "is_admin": true,
+        "createdAt": "2017-11-20T11:52:37.941Z",
+        "updatedAt": "2017-11-20T12:02:24.003Z",
+        "id": 4
+      },
+      {
+        "name": "petya",
+        "fullname": "Petya",
+        "email": "petya@post.it",
+        "phone": "",
+        "password": "$2a$10$OgdtSDSBYidQ1Bbhq.Z1a.T4CQyVbIo/DAOeLRm8m.XNh0o6e4Spi",
+        "is_admin": true,
+        "createdAt": "2017-11-20T11:53:16.020Z",
+        "updatedAt": "2017-11-20T12:02:47.716Z",
+        "id": 5
+      },
+      {
+        "name": "test",
+        "fullname": "test",
+        "email": "test@test",
+        "phone": "",
+        "password": "$2a$10$.IYgFBTtBfNb9nt1lc39h.xXCo/SM/yOud39ixUdw78r0yVxo9SEy",
+        "is_admin": false,
+        "createdAt": "2017-11-20T11:56:14.502Z",
+        "updatedAt": "2017-11-20T11:56:14.502Z",
+        "id": 6
       }
     ]
   },
@@ -351,10 +480,10 @@
   "counters": {
     "auth": {},
     "package": {
-      "id": 3
+      "id": 7
     },
     "user": {
-      "id": 3
+      "id": 6
     },
     "administrator": {
       "id": 3
