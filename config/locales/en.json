@@ -1,7 +1,6 @@
 {
 	"Post It package manager": "Post It package manager",
 	"Lorem ipsum dolor sit amet": "Lorem ipsum dolor sit amet",
-
 	"Packages": "Packages",
 	"Package": "Package",
 	"Profil": "Profil",
@@ -9,10 +8,8 @@
 	"Logout": "Logout",
 	"Save": "Save",
 	"Add user": "Add user",
-
 	"Prev": "Prev",
 	"Next": "Next",
-
 	"Login": "Login",
 	"Login to Post IT": "Login to Post IT",
 	"Enter your username and password to log on:": "Enter your username and password to log on:",
@@ -22,7 +19,6 @@
 	"Detailed": "Detailed",
 	"From": "From",
 	"To": "To",
-
 	"Id": "Id",
 	"Username": "Username",
 	"Fullname": "Fullname",
@@ -32,13 +28,11 @@
 	"User role": "User role",
 	"Admin": "Admin",
 	"User": "User",
-
 	"Change password": "Change password",
 	"Old password": "Old password",
 	"New password": "New password",
 	"Confirm password": "Confirm password",
 	"New Password (confirm)": "New Password (confirm)",
-
 	"Creator": "Creator",
 	"Pid": "Pid",
 	"Date": "Date",
@@ -60,17 +54,15 @@
 	"Total": "Total",
 	"Extra fee": "Extra fee",
 	"Comment": "Comment",
-
 	"select an option": "select an option",
-
 	"letter": "Letter",
 	"invoice": "Invoice",
 	"package": "package",
-
 	"Add division": "Add division",
 	"Add administrator": "Add administrator",
 	"Administrator name": "Administrator name",
 	"Division name": "Division name",
-
-	"Users": "Users"
+	"Users": "Users",
+	"Number": "Number",
+	"Üzenet": "Üzenet"
 }
