@@ -27,6 +27,23 @@
         <div id="detailed-search" class="d-print-none w-100 <%= req.param('pid', '') == '' ? 'collapse' : '' %>">
             <hr>
             <form class="form-inline" method="GET">
+                <div class="input-group mb-sm-2 col-sm-12">
+                    <div class="input-group-addon"><%= __('Saved searches') %></div>
+                    <select id="saved-searches-select" name="division" class="form-control" id="division" data-default-value=" -- <%= __('select an option') %> -- ">
+                        <option selected value> -- <%= __('select an option') %> -- </option>
+                    </select>
+                </div>
+                <div class="input-group my-2 my-sm-0 col-md-9 col-sm-8">
+                    <div class="input-group-addon"><%= __('Search name') %></div>
+                    <input id="save-search-name" type="text" class="form-control" placeholder="<%= __('Search name') %>" name="creator">
+                </div>
+                <button id="save-search-btn" type="button" class="btn btn-primary col-sm-4 col-md-3">
+                    <i class="fa fa-floppy-o"></i> 
+                    <%= __('Save search') %>
+                </button>                
+            </form>
+            <hr>
+            <form id="detailed-search-form" class="form-inline" method="GET">
                 <div class="input-group my-2 mb-sm-0 col-md-4 col-sm-6">
                     <div class="input-group-addon"><%= __('Pid') %></div>
                     <input type="text" class="form-control" placeholder="<%= __('Pid') %>" name="pid" value="<%= req.param('pid', '') %>">
@@ -102,7 +119,7 @@
                     <input type="date" class="form-control" placeholder="<%= __('Date') %>" name="to" value="<%= req.param('to', '') %>">
                 </div>
                 <br>
-                <button type="submit" class="w-100 btn btn-primary my-0 mt-sm-2"><%= __('Search') %></button>
+                <button type="submit" class="w-100 btn btn-primary my-0 mt-sm-2"><i class="fa fa-search"></i> <%= __('Search') %></button>
             </form>
         </div>
         <hr class="d-print-none">

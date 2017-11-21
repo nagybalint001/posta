@@ -64,5 +64,8 @@
 	"Add administrator": "Adminisztrátor hozzáadása",
 	"Administrator name": "Adminisztrátor név",
 	"Division name": "Divízió név",
-	"Users": "Felhasználók"
+	"Users": "Felhasználók",
+	"Saved searches": "Mentett keresések",
+	"Save search": "Keresés mentése",
+	"Search name": "Keresés név"
 }

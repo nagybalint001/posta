@@ -91,15 +91,15 @@
         "updatedAt": "2017-11-20T08:18:40.405Z"
       },
       {
+        "pid": "2017/11/10/001",
         "creator": "balint",
         "date": "2017-11-10T00:00:00.000Z",
         "dir": "out",
-        "type": "package",
         "administrator": "Mézga Aladár",
         "division": "RX",
-        "partner": "Béla",
-        "subject": "Bicikli",
+        "type": "package",
         "parcelNumber": "",
+        "partner": "Béla",
         "city": "Vác",
         "zip": "2600",
         "count": "1",
@@ -108,22 +108,22 @@
         "weightPrice": "500",
         "total": "",
         "extraFee": "",
+        "subject": "Bicikli",
         "comment": "",
-        "pid": "2017/11/10/001",
+        "id": 4,
         "createdAt": "2017-11-20T11:57:24.255Z",
-        "updatedAt": "2017-11-20T11:57:24.255Z",
-        "id": 4
+        "updatedAt": "2017-11-20T11:57:24.255Z"
       },
       {
+        "pid": "2017/11/20/003",
         "creator": "balint",
         "date": "2017-11-20T00:00:00.000Z",
         "dir": "in",
-        "type": "invoice",
         "administrator": "Máris Szomszéd",
         "division": "RX",
-        "partner": "Józsi",
-        "subject": "Gázszámla",
+        "type": "invoice",
         "parcelNumber": "",
+        "partner": "Józsi",
         "city": "",
         "zip": "",
         "count": "",
@@ -132,22 +132,22 @@
         "weightPrice": "",
         "total": "96000",
         "extraFee": "",
+        "subject": "Gázszámla",
         "comment": "",
-        "pid": "2017/11/20/003",
+        "id": 5,
         "createdAt": "2017-11-20T11:59:23.724Z",
-        "updatedAt": "2017-11-20T11:59:23.724Z",
-        "id": 5
+        "updatedAt": "2017-11-20T11:59:23.724Z"
       },
       {
+        "pid": "2017/11/20/004",
         "creator": "balint",
         "date": "2017-11-20T00:00:00.000Z",
         "dir": "in",
-        "type": "letter",
         "administrator": "Máris Szomszéd",
         "division": "DX",
-        "partner": "Géza",
-        "subject": "Fontos üzenet",
+        "type": "letter",
         "parcelNumber": "",
+        "partner": "Géza",
         "city": "",
         "zip": "",
         "count": "",
@@ -156,22 +156,22 @@
         "weightPrice": "",
         "total": "",
         "extraFee": "",
+        "subject": "Fontos üzenet",
         "comment": "",
-        "pid": "2017/11/20/004",
+        "id": 6,
         "createdAt": "2017-11-20T12:00:10.264Z",
-        "updatedAt": "2017-11-20T12:00:10.264Z",
-        "id": 6
+        "updatedAt": "2017-11-20T12:00:10.264Z"
       },
       {
+        "pid": "2017/11/20/005",
         "creator": "balint",
         "date": "2017-11-20T00:00:00.000Z",
         "dir": "out",
-        "type": "letter",
         "administrator": "Blöki",
         "division": "MZ/X",
-        "partner": "Béla",
-        "subject": "Elszámolás",
+        "type": "letter",
         "parcelNumber": "",
+        "partner": "Béla",
         "city": "",
         "zip": "",
         "count": "",
@@ -180,13 +180,14 @@
         "weightPrice": "",
         "total": "",
         "extraFee": "",
+        "subject": "Elszámolás",
         "comment": "",
-        "pid": "2017/11/20/005",
+        "id": 7,
         "createdAt": "2017-11-20T12:01:34.235Z",
-        "updatedAt": "2017-11-20T12:01:34.235Z",
-        "id": 7
+        "updatedAt": "2017-11-20T12:01:34.235Z"
       }
     ],
+    "savedsearch": [],
     "type": [
       {
         "name": "invoice",
@@ -271,9 +272,9 @@
         "phone": "",
         "password": "$2a$10$7L6c.4.3wyBCiOAwTDhjsOIlirVFnABjrvkatUf6ETPppA8Em1V0q",
         "is_admin": true,
+        "id": 4,
         "createdAt": "2017-11-20T11:52:37.941Z",
-        "updatedAt": "2017-11-20T12:02:24.003Z",
-        "id": 4
+        "updatedAt": "2017-11-20T12:02:24.003Z"
       },
       {
         "name": "petya",
@@ -282,9 +283,9 @@
         "phone": "",
         "password": "$2a$10$OgdtSDSBYidQ1Bbhq.Z1a.T4CQyVbIo/DAOeLRm8m.XNh0o6e4Spi",
         "is_admin": true,
+        "id": 5,
         "createdAt": "2017-11-20T11:53:16.020Z",
-        "updatedAt": "2017-11-20T12:02:47.716Z",
-        "id": 5
+        "updatedAt": "2017-11-20T12:02:47.716Z"
       },
       {
         "name": "test",
@@ -293,9 +294,9 @@
         "phone": "",
         "password": "$2a$10$.IYgFBTtBfNb9nt1lc39h.xXCo/SM/yOud39ixUdw78r0yVxo9SEy",
         "is_admin": false,
+        "id": 6,
         "createdAt": "2017-11-20T11:56:14.502Z",
-        "updatedAt": "2017-11-20T11:56:14.502Z",
-        "id": 6
+        "updatedAt": "2017-11-20T11:56:14.502Z"
       }
     ]
   },
@@ -421,6 +422,27 @@
         "type": "datetime"
       }
     },
+    "savedsearch": {
+      "name": {
+        "type": "string",
+        "unique": true
+      },
+      "value": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
     "type": {
       "name": {
         "type": "string",
@@ -493,6 +515,9 @@
     },
     "type": {
       "id": 4
+    },
+    "savedsearch": {
+      "id": 0
     }
   }
 }
