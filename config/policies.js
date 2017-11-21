@@ -35,10 +35,10 @@ module.exports.policies = {
     'create': true,
     'login': 'noAuth',
     'loginForm': 'noAuth',
-    'admin': 'admin',
-    'registerForm': 'admin',
-    'create': 'admin',
-    'users': 'admin'
+    'admin': ['auth', 'admin'],
+    'registerForm': ['auth', 'admin'],
+    'create': ['auth', 'admin'],
+    'users': ['auth', 'admin']
   },
 
   auth: {
@@ -47,11 +47,15 @@ module.exports.policies = {
   },
 
   division: {
-    'create': 'admin'
+    'create': ['auth', 'admin']
   },
 
   administrator: {
-    'create': 'admin'
+    'create': ['auth', 'admin']
+  },
+
+  statistics:{
+    '*': ['auth', 'admin']
   }
 
   /***************************************************************************
