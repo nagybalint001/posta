@@ -57,8 +57,8 @@ module.exports = {
         if(!valid)
           return res.view("login", {error:"Invalid Login", name, title: "Login"})
                 
-        req.session.user = user
-        return res.redirect("/")
+        req.session.user = user;
+        return res.redirect(decodeURIComponent(req.query['_redir'] || "/"));
       })
     })
   },
