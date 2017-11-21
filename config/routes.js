@@ -43,6 +43,7 @@ module.exports.routes = {
 
   'GET /admin': 'UserController.admin',
   'GET /admin/users': 'UserController.users',
+  'GET /admin/stat': 'StatisticsController.renderPage',
   'POST /user' : 'UserController.create',
   'POST /division': 'DivisionController.create',
   'POST /administrator': 'AdministratorController.create',

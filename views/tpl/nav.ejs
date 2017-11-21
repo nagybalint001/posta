@@ -20,7 +20,10 @@
                 <% if(req.session.user.is_admin == true) { %>
                 <li class="nav-item">
                     <a class="nav-link" href="/admin"><i class="fa fa-lock"></i> <%= __('Admin') %></a>
-                </li>   
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/stat"><i class="fa fa-pie-chart"></i> <%= __('Statistics') %></a>
+                </li> 
                 <% } %>
             </ul>
             <ul class="navbar-nav">

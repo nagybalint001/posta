@@ -1,0 +1,35 @@
+<!-- Local includes -->
+<% script('https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js') %>
+
+<%- partial('tpl/nav') %>
+
+<div class="container">
+    <div class="card p-5">
+        <h1><%= __('Statistics') %></h1>
+        <hr class="w-100">
+        <h2>Test:</h2>
+        <div><%= JSON.stringify(data) %></div>
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        <script>
+            window.addEventListener("load", function () {
+            
+                var chart = new CanvasJS.Chart("chartContainer", {
+                    animationEnabled: true,
+                    theme: "light2", // "light1", "light2", "dark1", "dark2"
+                    title:{
+                        text: "Title"
+                    },
+                    axisY: {
+                        title: "value"
+                    },
+                    data: [{        
+                        type: "column",
+                        dataPoints: (<%- JSON.stringify(data) %>).map(x=>({y:+x.value, label:x.date}))
+                    }]
+                });
+                chart.render();
+            
+            });
+        </script>
+    </div>
+</div>
