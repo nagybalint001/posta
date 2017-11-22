@@ -37,3 +37,7 @@ a.nodecor:hover{
 .hidden{
     display: none;
 }
+
+.canvasjs-chart-credit {
+    display: none;
+}

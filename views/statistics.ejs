@@ -7,8 +7,84 @@
     <div class="card p-5">
         <h1><%= __('Statistics') %></h1>
         <hr class="w-100">
+        <script>console.log(<%- JSON.stringify(data) %>)</script>
+        <div id="chartContainer_dirPie" style="height: 400px; width: 100%;"></div>
+        <script>
+            window.addEventListener("load", function () {
+            
+                var chart = new CanvasJS.Chart("chartContainer_dirPie", {
+                    animationEnabled: true,
+                    theme: "light2", // "light1", "light2", "dark1", "dark2"
+                    title:{
+                        text: "in/out count"
+                    },
+                    data: [{        
+                        type: "pie",
+                        dataPoints: (<%- JSON.stringify(data.dirCount) %>).map(x=>({y:+x.count, label:x.dir}))
+                    }]
+                });
+                chart.render();
+            
+            });
+        </script>
+        <div id="chartContainer_administratorPie" style="height: 400px; width: 100%;"></div>
+        <script>
+            window.addEventListener("load", function () {
+            
+                var chart = new CanvasJS.Chart("chartContainer_administratorPie", {
+                    animationEnabled: true,
+                    theme: "light2", // "light1", "light2", "dark1", "dark2"
+                    title:{
+                        text: "Administrator count"
+                    },
+                    data: [{        
+                        type: "pie",
+                        dataPoints: (<%- JSON.stringify(data.administratorCount) %>).map(x=>({y:+x.count, label:x.administrator}))
+                    }]
+                });
+                chart.render();
+            
+            });
+        </script>
+        <div id="chartContainer_typePie" style="height: 400px; width: 100%;"></div>
+        <script>
+            window.addEventListener("load", function () {
+            
+                var chart = new CanvasJS.Chart("chartContainer_typePie", {
+                    animationEnabled: true,
+                    theme: "light2", // "light1", "light2", "dark1", "dark2"
+                    title:{
+                        text: "Type count"
+                    },
+                    data: [{        
+                        type: "pie",
+                        dataPoints: (<%- JSON.stringify(data.typeCount) %>).map(x=>({y:+x.count, label:x.type}))
+                    }]
+                });
+                chart.render();
+            
+            });
+        </script>
+        <div id="chartContainer_divisionPie" style="height: 400px; width: 100%;"></div>
+        <script>
+            window.addEventListener("load", function () {
+            
+                var chart = new CanvasJS.Chart("chartContainer_divisionPie", {
+                    animationEnabled: true,
+                    theme: "light2", // "light1", "light2", "dark1", "dark2"
+                    title:{
+                        text: "Division count"
+                    },
+                    data: [{        
+                        type: "pie",
+                        dataPoints: (<%- JSON.stringify(data.divisionCount) %>).map(x=>({y:+x.count, label:x.division}))
+                    }]
+                });
+                chart.render();
+            
+            });
+        </script>
         <h2>Test:</h2>
-        <div><%= JSON.stringify(data) %></div>
         <div id="chartContainer" style="height: 300px; width: 100%;"></div>
         <script>
             window.addEventListener("load", function () {
