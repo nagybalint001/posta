@@ -24,7 +24,29 @@
                     },
                     data: [{        
                         type: "column",
-                        dataPoints: (<%- JSON.stringify(data) %>).map(x=>({y:+x.value, label:x.date}))
+                        dataPoints: (<%- JSON.stringify(data.dateValue) %>).map(x=>({y:+x.value, label:x.date}))
+                    }]
+                });
+                chart.render();
+            
+            });
+        </script>
+        <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+        <script>
+            window.addEventListener("load", function () {
+            
+                var chart = new CanvasJS.Chart("chartContainer2", {
+                    animationEnabled: true,
+                    theme: "light2", // "light1", "light2", "dark1", "dark2"
+                    title:{
+                        text: "Title"
+                    },
+                    axisY: {
+                        title: "total"
+                    },
+                    data: [{        
+                        type: "column",
+                        dataPoints: (<%- JSON.stringify(data.dateTotal) %>).map(x=>({y:+x.total, label:x.date}))
                     }]
                 });
                 chart.render();
