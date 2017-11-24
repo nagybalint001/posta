@@ -1,8 +1,8 @@
 {
-  "name": "Post IT",
+  "name": "posta2",
   "private": true,
-  "version": "1.0.0",
-  "description": "a packagemanager app",
+  "version": "0.0.0",
+  "description": "a Sails application",
   "keywords": [],
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -25,7 +25,6 @@
     "rc": "1.0.1",
     "sails": "~0.12.14",
     "sails-disk": "~0.10.9",
-    "sails-swagger": "^0.51.0",
     "supertest": "^3.0.0"
   },
   "scripts": {
@@ -38,9 +37,6 @@
     "type": "git",
     "url": "git://github.com/tomi/posta2.git"
   },
-  "author": "PostaTeam",
-  "license": "",
-  "devDependencies": {
-    "swagger-ui": "^2.2.10"
-  }
+  "author": "tomi",
+  "license": ""
 }
