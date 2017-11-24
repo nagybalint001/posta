@@ -1,1 +1,1387 @@
-{"swagger":"2.0","info":{"title":"Swagger Json","description":"This is a generated swagger json for your sails project","termsOfService":"http://example.com/terms","contact":{"name":"Theophilus Omoregbee","url":"http://github.com/theo4u","email":"theo4u@ymail.com"},"license":{"name":"Apache 2.0","url":"http://www.apache.org/licenses/LICENSE-2.0.html"},"version":"1.0.0"},"host":"localhost:1337","basePath":"/","externalDocs":{"url":"http://theophilus.ziippii.com"},"tags":[{"name":"Administrator"},{"name":"Auth"},{"name":"Division"},{"name":"Package"},{"name":"SavedSearch"},{"name":"Type"},{"name":"User"}],"definitions":{"administrator":{"properties":{"name":{"type":"string"}},"required":["name"]},"auth":{"properties":{}},"division":{"properties":{"name":{"type":"string"}},"required":["name"]},"package":{"properties":{"pid":{"type":"string"},"creator":{"type":"string"},"date":{"type":"string","format":"date"},"dir":{"type":"string"},"administrator":{"type":"string"},"division":{"type":"string"},"type":{"type":"string"},"parcelNumber":{"type":"string"},"partner":{"type":"string"},"city":{"type":"string"},"zip":{"type":"string"},"count":{"type":"string"},"weight":{"type":"string"},"value":{"type":"string"},"weightPrice":{"type":"string"},"total":{"type":"string"},"extraFee":{"type":"string"},"subject":{"type":"string"},"comment":{"type":"string"}},"required":["creator","dir","division","type","partner","subject"]},"savedsearch":{"properties":{"name":{"type":"string"},"value":{"type":"string"}},"required":["name","value"]},"type":{"properties":{"name":{"type":"string"},"fields":{"type":"string"}},"required":["name","fields"]},"user":{"properties":{"name":{"type":"string"},"fullname":{"type":"string"},"email":{"type":"string"},"phone":{"type":"string"},"password":{"type":"string"},"is_admin":{"type":"boolean"}},"required":["name","fullname","password","is_admin"]}},"parameters":{"WhereQueryParam":{"in":"query","name":"where","required":false,"type":"string","description":"This follows the standard from http://sailsjs.com/documentation/reference/blueprint-api/find-where"},"LimitQueryParam":{"in":"query","name":"limit","required":false,"type":"integer","description":"The maximum number of records to send back (useful for pagination). Defaults to undefined"},"SkipQueryParam":{"in":"query","name":"skip","required":false,"type":"integer","description":"The number of records to skip (useful for pagination)."},"SortQueryParam":{"in":"query","name":"sort","required":false,"type":"string","description":"The sort order. By default, returned records are sorted by primary key value in ascending order. e.g. ?sort=lastName%20ASC"},"PopulateQueryParam":{"in":"query","name":"populate","required":false,"type":"string","description":"check for better understanding -> http://sailsjs.com/documentation/reference/blueprint-api/find-where"},"PageQueryParam":{"in":"query","name":"page","required":false,"type":"integer","description":"This helps with pagination and when the limit is known"},"SelectQueryParam":{"in":"query","name":"select","required":false,"type":"string","description":"This helps with what to return for the user and its \",\" delimited"},"TokenHeaderParam":{"in":"header","name":"token","required":false,"type":"string","description":"Incase we want to send header inforamtion along our request"},"IDPathParam":{"in":"path","name":"id","required":true,"type":"string","description":"This is to identify a particular object out"},"PerPageQueryParam":{"in":"query","name":"perPage","required":false,"type":"integer","description":"This helps with pagination and when the limit is known for pagify"}},"paths":{"/main":{"get":{"summary":"","description":"","tags":["Auth"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/islogin":{"get":{"summary":"","description":"","tags":["Auth"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/auth/_config":{"get":{"summary":"","description":"","tags":["Auth"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/auth/{id}":{"get":{"summary":"Get Auth","description":"This is use to get a single Auth with the supplied id","tags":["Auth"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"put":{"summary":"Update Auth","description":"This is for updating our Auth based on the id","tags":["Auth"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for Auth","schema":{"$ref":"#/definitions/auth"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"delete":{"summary":"Delete Auth","description":"This is for deleting specified Auth with id","tags":["Auth"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/auth":{"get":{"summary":"List Auth","description":"This is use to retrieve List of Auth","tags":["Auth"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/WhereQueryParam"},{"$ref":"#/parameters/LimitQueryParam"},{"$ref":"#/parameters/SkipQueryParam"},{"$ref":"#/parameters/SortQueryParam"},{"$ref":"#/parameters/PopulateQueryParam"},{"$ref":"#/parameters/SelectQueryParam"},{"$ref":"#/parameters/PageQueryParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"post":{"summary":"Create Auth","description":"This is use to create new Auth","tags":["Auth"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for Auth","schema":{"$ref":"#/definitions/auth"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/login":{"get":{"summary":"","description":"","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"post":{"summary":"","description":"","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/admin":{"get":{"summary":"","description":"","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/admin/users":{"get":{"summary":"","description":"","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/user":{"post":{"summary":"","description":"","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for User","schema":{"$ref":"#/definitions/user"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"get":{"summary":"List User","description":"This is use to retrieve List of User","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/WhereQueryParam"},{"$ref":"#/parameters/LimitQueryParam"},{"$ref":"#/parameters/SkipQueryParam"},{"$ref":"#/parameters/SortQueryParam"},{"$ref":"#/parameters/PopulateQueryParam"},{"$ref":"#/parameters/SelectQueryParam"},{"$ref":"#/parameters/PageQueryParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/profil":{"get":{"summary":"","description":"","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"post":{"summary":"","description":"","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for User","schema":{"$ref":"#/definitions/user"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/logout":{"post":{"summary":"","description":"","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"get":{"summary":"","description":"","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"put":{"summary":"","description":"","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"delete":{"summary":"","description":"","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"patch":{"summary":"","description":"","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/user/{id}":{"get":{"summary":"Get User","description":"This is use to get a single User with the supplied id","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"delete":{"summary":"Delete User","description":"This is for deleting specified User with id","tags":["User"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/admin/stat":{"get":{"summary":"","description":"","tags":["statistics"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/division":{"post":{"summary":"","description":"","tags":["Division"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for Division","schema":{"$ref":"#/definitions/division"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"get":{"summary":"List Division","description":"This is use to retrieve List of Division","tags":["Division"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/WhereQueryParam"},{"$ref":"#/parameters/LimitQueryParam"},{"$ref":"#/parameters/SkipQueryParam"},{"$ref":"#/parameters/SortQueryParam"},{"$ref":"#/parameters/PopulateQueryParam"},{"$ref":"#/parameters/SelectQueryParam"},{"$ref":"#/parameters/PageQueryParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/division/{id}":{"get":{"summary":"Get Division","description":"This is use to get a single Division with the supplied id","tags":["Division"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"put":{"summary":"Update Division","description":"This is for updating our Division based on the id","tags":["Division"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for Division","schema":{"$ref":"#/definitions/division"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"delete":{"summary":"Delete Division","description":"This is for deleting specified Division with id","tags":["Division"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/administrator":{"post":{"summary":"","description":"","tags":["Administrator"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for Administrator","schema":{"$ref":"#/definitions/administrator"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"get":{"summary":"List Administrator","description":"This is use to retrieve List of Administrator","tags":["Administrator"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/WhereQueryParam"},{"$ref":"#/parameters/LimitQueryParam"},{"$ref":"#/parameters/SkipQueryParam"},{"$ref":"#/parameters/SortQueryParam"},{"$ref":"#/parameters/PopulateQueryParam"},{"$ref":"#/parameters/SelectQueryParam"},{"$ref":"#/parameters/PageQueryParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/administrator/{id}":{"get":{"summary":"Get Administrator","description":"This is use to get a single Administrator with the supplied id","tags":["Administrator"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"put":{"summary":"Update Administrator","description":"This is for updating our Administrator based on the id","tags":["Administrator"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for Administrator","schema":{"$ref":"#/definitions/administrator"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"delete":{"summary":"Delete Administrator","description":"This is for deleting specified Administrator with id","tags":["Administrator"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/packages":{"get":{"summary":"","description":"","tags":["Package"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/package":{"get":{"summary":"List Package","description":"This is use to retrieve List of Package","tags":["Package"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/WhereQueryParam"},{"$ref":"#/parameters/LimitQueryParam"},{"$ref":"#/parameters/SkipQueryParam"},{"$ref":"#/parameters/SortQueryParam"},{"$ref":"#/parameters/PopulateQueryParam"},{"$ref":"#/parameters/SelectQueryParam"},{"$ref":"#/parameters/PageQueryParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"post":{"summary":"","description":"","tags":["Package"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for Package","schema":{"$ref":"#/definitions/package"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/package/{id}":{"get":{"summary":"Get Package","description":"This is use to get a single Package with the supplied id","tags":["Package"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"post":{"summary":"","description":"","tags":["Package"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for Package","schema":{"$ref":"#/definitions/package"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"delete":{"summary":"Delete Package","description":"This is for deleting specified Package with id","tags":["Package"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/":{"post":{"summary":"","description":"","tags":[""],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"get":{"summary":"","description":"","tags":[""],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"put":{"summary":"","description":"","tags":[""],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"delete":{"summary":"","description":"","tags":[""],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"patch":{"summary":"","description":"","tags":[""],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/savedsearch/{id}":{"get":{"summary":"Get Savedsearch","description":"This is use to get a single Savedsearch with the supplied id","tags":["SavedSearch"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"put":{"summary":"Update Savedsearch","description":"This is for updating our Savedsearch based on the id","tags":["SavedSearch"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for Savedsearch","schema":{"$ref":"#/definitions/savedsearch"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"delete":{"summary":"Delete Savedsearch","description":"This is for deleting specified Savedsearch with id","tags":["SavedSearch"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/savedsearch":{"get":{"summary":"List Savedsearch","description":"This is use to retrieve List of Savedsearch","tags":["SavedSearch"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/WhereQueryParam"},{"$ref":"#/parameters/LimitQueryParam"},{"$ref":"#/parameters/SkipQueryParam"},{"$ref":"#/parameters/SortQueryParam"},{"$ref":"#/parameters/PopulateQueryParam"},{"$ref":"#/parameters/SelectQueryParam"},{"$ref":"#/parameters/PageQueryParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"post":{"summary":"Create Savedsearch","description":"This is use to create new Savedsearch","tags":["SavedSearch"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for Savedsearch","schema":{"$ref":"#/definitions/savedsearch"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/type/{id}":{"get":{"summary":"Get Type","description":"This is use to get a single Type with the supplied id","tags":["Type"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"put":{"summary":"Update Type","description":"This is for updating our Type based on the id","tags":["Type"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for Type","schema":{"$ref":"#/definitions/type"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"delete":{"summary":"Delete Type","description":"This is for deleting specified Type with id","tags":["Type"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/IDPathParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}},"/type":{"get":{"summary":"List Type","description":"This is use to retrieve List of Type","tags":["Type"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"$ref":"#/parameters/WhereQueryParam"},{"$ref":"#/parameters/LimitQueryParam"},{"$ref":"#/parameters/SkipQueryParam"},{"$ref":"#/parameters/SortQueryParam"},{"$ref":"#/parameters/PopulateQueryParam"},{"$ref":"#/parameters/SelectQueryParam"},{"$ref":"#/parameters/PageQueryParam"}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}},"post":{"summary":"Create Type","description":"This is use to create new Type","tags":["Type"],"produces":["application/json"],"consumes":["application/json"],"parameters":[{"$ref":"#/parameters/TokenHeaderParam"},{"name":"body","in":"body","required":true,"description":"An object defining our schema for Type","schema":{"$ref":"#/definitions/type"}}],"responses":{"200":{"description":"The requested resource"},"404":{"description":"Resource not found"},"500":{"description":"Internal server error"}}}}}}
+{  
+    "swagger":"2.0",
+    "info":{  
+        "title":"Post IT",
+        "description":"A package manager application",
+        "version":"1.0.0"
+    },
+    "tags":[  
+        {  
+            "name":"Administrator"
+        },
+        {  
+            "name":"Auth"
+        },
+        {  
+            "name":"Division"
+        },
+        {  
+            "name":"Package"
+        },
+        {  
+            "name":"SavedSearch"
+        },
+        {  
+            "name":"Type"
+        },
+        {  
+            "name":"User"
+        },
+        {  
+            "name":"Statistics"
+        }
+    ],
+    "definitions":{  
+        "administrator":{  
+            "properties":{  
+                "name":{  
+                    "type":"string"
+                }
+            },
+            "required":[  
+                "name"
+            ]
+        },
+        "division":{  
+            "properties":{  
+                "name":{  
+                    "type":"string"
+                }
+            },
+            "required":[  
+                "name"
+            ]
+        },
+        "package":{  
+            "properties":{  
+                "pid":{  
+                    "type":"string"
+                },
+                "creator":{  
+                    "type":"string"
+                },
+                "date":{  
+                    "type":"string",
+                    "format":"date"
+                },
+                "dir":{  
+                    "type":"string"
+                },
+                "administrator":{  
+                    "type":"string"
+                },
+                "division":{  
+                    "type":"string"
+                },
+                "type":{  
+                    "type":"string"
+                },
+                "parcelNumber":{  
+                    "type":"string"
+                },
+                "partner":{  
+                    "type":"string"
+                },
+                "city":{  
+                    "type":"string"
+                },
+                "zip":{  
+                    "type":"string"
+                },
+                "count":{  
+                    "type":"string"
+                },
+                "weight":{  
+                    "type":"string"
+                },
+                "value":{  
+                    "type":"string"
+                },
+                "weightPrice":{  
+                    "type":"string"
+                },
+                "total":{  
+                    "type":"string"
+                },
+                "extraFee":{  
+                    "type":"string"
+                },
+                "subject":{  
+                    "type":"string"
+                },
+                "comment":{  
+                    "type":"string"
+                }
+            },
+            "required":[  
+                "creator",
+                "dir",
+                "division",
+                "type",
+                "partner",
+                "subject"
+            ]
+        },
+        "savedsearch":{  
+            "properties":{  
+                "name":{  
+                    "type":"string"
+                },
+                "value":{  
+                    "type":"string"
+                }
+            },
+            "required":[  
+                "name",
+                "value"
+            ]
+        },
+        "type":{  
+            "properties":{  
+                "name":{  
+                    "type":"string"
+                },
+                "fields":{  
+                    "type":"string"
+                }
+            },
+            "required":[  
+                "name",
+                "fields"
+            ]
+        },
+        "user":{  
+            "properties":{  
+                "name":{  
+                    "type":"string"
+                },
+                "fullname":{  
+                    "type":"string"
+                },
+                "email":{  
+                    "type":"string"
+                },
+                "phone":{  
+                    "type":"string"
+                },
+                "password":{  
+                    "type":"string"
+                },
+                "is_admin":{  
+                    "type":"boolean"
+                }
+            },
+            "required":[  
+                "name",
+                "fullname",
+                "password",
+                "is_admin"
+            ]
+        }
+    },
+    "parameters":{  
+        "IDPathParam":{  
+            "in":"path",
+            "name":"id",
+            "required":true,
+            "type":"string",
+            "description":"This is to identify a particular object out"
+        }
+    },
+    "paths":{  
+        "/main":{  
+            "get":{  
+                "summary":"Main page",
+                "description":"The app's main page after login",
+                "tags":[  
+                    "Auth"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/islogin":{  
+            "get":{  
+                "summary":"Has someone logged in",
+                "description":"",
+                "tags":[  
+                    "Auth"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/login":{  
+            "get":{  
+                "summary":"Login view",
+                "description":"",
+                "tags":[  
+                    "User"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "post":{  
+                "summary":"Sign in user",
+                "description":"",
+                "tags":[  
+                    "User"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/admin":{  
+            "get":{  
+                "summary":"Admin view",
+                "description":"",
+                "tags":[  
+                    "User"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/admin/users":{  
+            "get":{  
+                "summary":"Users view",
+                "description":"",
+                "tags":[  
+                    "User"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/user":{  
+            "post":{  
+                "summary":"Create user",
+                "description":"",
+                "tags":[  
+                    "User"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[
+                    {  
+                        "name":"body",
+                        "in":"body",
+                        "required":true,
+                        "description":"An object defining our schema for User",
+                        "schema":{  
+                            "$ref":"#/definitions/user"
+                        }
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "get":{  
+                "summary":"List User",
+                "description":"This is use to retrieve List of User",
+                "tags":[  
+                    "User"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/profil":{  
+            "get":{  
+                "summary":"Profil view",
+                "description":"",
+                "tags":[  
+                    "User"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "post":{  
+                "summary":"Modify profile",
+                "description":"",
+                "tags":[  
+                    "User"
+                ],
+                "parameters":[
+                    {  
+                        "name":"body",
+                        "in":"body",
+                        "required":true,
+                        "description":"An object defining our schema for User",
+                        "schema":{  
+                            "$ref":"#/definitions/user"
+                        }
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/logout":{ 
+            "get":{  
+                "summary":"Sign out user",
+                "description":"",
+                "tags":[  
+                    "User"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/user/{id}":{  
+            "get":{  
+                "summary":"Get User",
+                "description":"This is use to get a single User with the supplied id",
+                "tags":[  
+                    "User"
+                ],
+                "parameters":[
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "delete":{  
+                "summary":"Delete User",
+                "description":"This is for deleting specified User with id",
+                "tags":[  
+                    "User"
+                ],
+                "parameters":[
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/admin/stat":{  
+            "get":{  
+                "summary":"Statistics view",
+                "description":"",
+                "tags":[  
+                    "Statistics"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/division":{  
+            "post":{  
+                "summary":"Add Division",
+                "description":"",
+                "tags":[  
+                    "Division"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[
+                    {  
+                        "name":"body",
+                        "in":"body",
+                        "required":true,
+                        "description":"An object defining our schema for Division",
+                        "schema":{  
+                            "$ref":"#/definitions/division"
+                        }
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "get":{  
+                "summary":"List Division",
+                "description":"This is use to retrieve List of Division",
+                "tags":[  
+                    "Division"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/division/{id}":{  
+            "get":{  
+                "summary":"Get Division",
+                "description":"This is use to get a single Division with the supplied id",
+                "tags":[  
+                    "Division"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "put":{  
+                "summary":"Update Division",
+                "description":"This is for updating our Division based on the id",
+                "tags":[  
+                    "Division"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    },
+                    {  
+                        "name":"body",
+                        "in":"body",
+                        "required":true,
+                        "description":"An object defining our schema for Division",
+                        "schema":{  
+                            "$ref":"#/definitions/division"
+                        }
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "delete":{  
+                "summary":"Delete Division",
+                "description":"This is for deleting specified Division with id",
+                "tags":[  
+                    "Division"
+                ],
+                "parameters":[  
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/administrator":{  
+            "post":{  
+                "summary":"Add Administrator",
+                "description":"",
+                "tags":[  
+                    "Administrator"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[ 
+                    {  
+                        "name":"body",
+                        "in":"body",
+                        "required":true,
+                        "description":"An object defining our schema for Administrator",
+                        "schema":{  
+                            "$ref":"#/definitions/administrator"
+                        }
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "get":{  
+                "summary":"List Administrator",
+                "description":"This is use to retrieve List of Administrator",
+                "tags":[  
+                    "Administrator"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/administrator/{id}":{  
+            "get":{  
+                "summary":"Get Administrator",
+                "description":"This is use to get a single Administrator with the supplied id",
+                "tags":[  
+                    "Administrator"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "put":{  
+                "summary":"Update Administrator",
+                "description":"This is for updating our Administrator based on the id",
+                "tags":[  
+                    "Administrator"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    },
+                    {  
+                        "name":"body",
+                        "in":"body",
+                        "required":true,
+                        "description":"An object defining our schema for Administrator",
+                        "schema":{  
+                            "$ref":"#/definitions/administrator"
+                        }
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "delete":{  
+                "summary":"Delete Administrator",
+                "description":"This is for deleting specified Administrator with id",
+                "tags":[  
+                    "Administrator"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[ 
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/packages":{  
+            "get":{  
+                "summary":"List Packages",
+                "description":"",
+                "tags":[  
+                    "Package"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/package":{  
+            "get":{  
+                "summary":"List Package",
+                "description":"This is use to retrieve List of Package",
+                "tags":[  
+                    "Package"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "post":{  
+                "summary":"Create package",
+                "description":"",
+                "tags":[  
+                    "Package"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "name":"body",
+                        "in":"body",
+                        "required":true,
+                        "description":"An object defining our schema for Package",
+                        "schema":{  
+                            "$ref":"#/definitions/package"
+                        }
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/package/{id}":{  
+            "get":{  
+                "summary":"Get Package",
+                "description":"This is use to get a single Package with the supplied id",
+                "tags":[  
+                    "Package"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "post":{  
+                "summary":"Update package",
+                "description":"",
+                "tags":[  
+                    "Package"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    },
+                    {  
+                        "name":"body",
+                        "in":"body",
+                        "required":true,
+                        "description":"An object defining our schema for Package",
+                        "schema":{  
+                            "$ref":"#/definitions/package"
+                        }
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/package/{id}":{  
+            "get":{  
+                "summary":"Get Package",
+                "description":"This is use to get a single Package with the supplied id",
+                "tags":[  
+                    "Package"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[ 
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "post":{  
+                "summary":"Update package",
+                "description":"",
+                "tags":[  
+                    "Package"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    },
+                    {  
+                        "name":"body",
+                        "in":"body",
+                        "required":true,
+                        "description":"An object defining our schema for Package",
+                        "schema":{  
+                            "$ref":"#/definitions/package"
+                        }
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "delete":{  
+                "summary":"Delete Package",
+                "description":"This is for deleting specified Package with id",
+                "tags":[  
+                    "Package"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/savedsearch/{id}":{  
+            "get":{  
+                "summary":"Get Savedsearch",
+                "description":"This is use to get a single Savedsearch with the supplied id",
+                "tags":[  
+                    "SavedSearch"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "put":{  
+                "summary":"Update Savedsearch",
+                "description":"This is for updating our Savedsearch based on the id",
+                "tags":[  
+                    "SavedSearch"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    },
+                    {  
+                        "name":"body",
+                        "in":"body",
+                        "required":true,
+                        "description":"An object defining our schema for Savedsearch",
+                        "schema":{  
+                            "$ref":"#/definitions/savedsearch"
+                        }
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "delete":{  
+                "summary":"Delete Savedsearch",
+                "description":"This is for deleting specified Savedsearch with id",
+                "tags":[  
+                    "SavedSearch"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/savedsearch":{  
+            "get":{  
+                "summary":"List Savedsearch",
+                "description":"This is use to retrieve List of Savedsearch",
+                "tags":[  
+                    "SavedSearch"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "post":{  
+                "summary":"Create Savedsearch",
+                "description":"This is use to create new Savedsearch",
+                "tags":[  
+                    "SavedSearch"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "name":"body",
+                        "in":"body",
+                        "required":true,
+                        "description":"An object defining our schema for Savedsearch",
+                        "schema":{  
+                            "$ref":"#/definitions/savedsearch"
+                        }
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/type/{id}":{  
+            "get":{  
+                "summary":"Get Type",
+                "description":"This is use to get a single Type with the supplied id",
+                "tags":[  
+                    "Type"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "put":{  
+                "summary":"Update Type",
+                "description":"This is for updating our Type based on the id",
+                "tags":[  
+                    "Type"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    },
+                    {  
+                        "name":"body",
+                        "in":"body",
+                        "required":true,
+                        "description":"An object defining our schema for Type",
+                        "schema":{  
+                            "$ref":"#/definitions/type"
+                        }
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "delete":{  
+                "summary":"Delete Type",
+                "description":"This is for deleting specified Type with id",
+                "tags":[  
+                    "Type"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[  
+                    {  
+                        "$ref":"#/parameters/IDPathParam"
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/type":{  
+            "get":{  
+                "summary":"List Type",
+                "description":"This is use to retrieve List of Type",
+                "tags":[  
+                    "Type"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            },
+            "post":{  
+                "summary":"Create Type",
+                "description":"This is use to create new Type",
+                "tags":[  
+                    "Type"
+                ],
+                "produces":[  
+                    "application/json"
+                ],
+                "consumes":[  
+                    "application/json"
+                ],
+                "parameters":[ 
+                    {  
+                        "name":"body",
+                        "in":"body",
+                        "required":true,
+                        "description":"An object defining our schema for Type",
+                        "schema":{  
+                            "$ref":"#/definitions/type"
+                        }
+                    }
+                ],
+                "responses":{  
+                    "200":{  
+                        "description":"The requested resource"
+                    },
+                    "404":{  
+                        "description":"Resource not found"
+                    },
+                    "500":{  
+                        "description":"Internal server error"
+                    }
+                }
+            }
+        }
+    }
+}
