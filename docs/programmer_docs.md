@@ -14,7 +14,7 @@ Backend:
 <p>Az alkalmazás MVC architektúrát követi. Ennek a megvalósításának az alapját a Sails js keretrendszer adja. Ennek a vázlatos felépítése látható az alábbi ábrán.</p>
 
 <p align="center">
-<img src="./assets/architecture.png">
+<img src="./assets/architecture.PNG">
 </p>
 
 ## Backend:
