@@ -19,15 +19,10 @@ Backend:
   - Node.js
   - Sails
   - mongodb
-  
-### Tervek
 
-![](assets/wireframe1.png)
+### Dokumentációk:
+[Kezdeti tervek](./docs/plans.md)
 
-![](assets/wireframe2.png)
+[Felhasználói dokumentáció](./docs/user_docs.md)
 
-![](assets/wireframe3.png)
-
-![](assets/wireframe4.png)
-
-
+[Fejlesztői dokumentáció](./docs/programmer_docs.md)
