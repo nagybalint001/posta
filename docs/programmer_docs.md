@@ -18,6 +18,7 @@ Backend:
 </p>
 
 ## Backend:
+
 <p>Az alkalmazás alapját a Sails js keretrendszer adja, ami Node.js-re épül. A félév során ezt egészítettük ki saját modellek, kontrollerek és nézetek implementálásával. Minden modell-hez tartozik kontroller is, így a Sails biztosít hozzá REST api szerű hozzáférést. Útvonalak és policyk definiálásával kötöttük ezeket a modelleket és kontrollereket nézetekhez.</p>
 
 Itt találhatóak az előbb említett komponensek:
@@ -33,9 +34,15 @@ Itt találhatóak az előbb említett komponensek:
 <p>A modell módosítására szolgáló kéréseket a /api útvonalhoz kell címezni, természetesen a megfelelő modell nevét utánaírva. Ennek a részletesebb leírása a /docs címen található</p>
 
 ## Frontend:
+
 <p>A korábban már említett nézetek ejs segítségével készültek el. Moduláris a felépítése, azaz a különböző nézeteken ismétlődő részeket csak egyszer írtuk meg, a többi helyen csak hivatkozunk rájuk. Ilyen például a navigációs menü, vagy a felhasználókat/csomagokat listázó részeken a listaelemek.</p>
 <p>A nézetek formázásához alapvetően bootstrap-et használunk.</p>
 <p>Kliens oldalon viszonylag kevés szkript található, lényegében csak a felület interaktívabbá tételéért felelős kódrészletek vannak csak. A listázások és a lekérdezések szerver oldalon történnek.</p>
+
+### Lokalizáció:
+
+<p>Az alkalmazás magyar és angol nyelven is meg tudja jeleníteni a szövegeket, a http kérésben küldött preferenciáknak megfelelően. Ehhez az i18n modult használjuk.</p>
+
 
 ## Telepítés
 
