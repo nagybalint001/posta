@@ -43,3 +43,9 @@
 - Felhasználók, és adataik listázása (lapozás funkcióval)
 - Admin felületről elérhető felhasználó lista
 - Új csomag hozzáadásakor (üresen hagyott dátum esetén) keletkező Invalid Date hiba javítása
+
+## it.8 (2017/11/20 - 2017/11/27)
+- Néhány unit test
+- Statisztikák felület
+- Swagger api leírás frissítése
+- Dokumentációk elkészítése
