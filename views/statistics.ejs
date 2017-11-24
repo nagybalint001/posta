@@ -8,7 +8,8 @@
         <h1><%= __('Statistics') %></h1>
         <hr class="w-100">
         <script>console.log(<%- JSON.stringify(data) %>)</script>
-        <div id="chartContainer_dirPie" style="height: 400px; width: 100%;"></div>
+        <div class="row">
+        <div id="chartContainer_dirPie" style="height: 400px;" class="col-12 col-md-6"></div>
         <script>
             window.addEventListener("load", function () {
             
@@ -27,7 +28,7 @@
             
             });
         </script>
-        <div id="chartContainer_administratorPie" style="height: 400px; width: 100%;"></div>
+        <div id="chartContainer_administratorPie" style="height: 400px;" class="col-12 col-md-6"></div>
         <script>
             window.addEventListener("load", function () {
             
@@ -46,7 +47,10 @@
             
             });
         </script>
-        <div id="chartContainer_typePie" style="height: 400px; width: 100%;"></div>
+        </div>
+        <hr>
+        <div class="row">
+        <div id="chartContainer_typePie" style="height: 400px;" class="col-12 col-md-6"></div>
         <script>
             window.addEventListener("load", function () {
             
@@ -65,7 +69,7 @@
             
             });
         </script>
-        <div id="chartContainer_divisionPie" style="height: 400px; width: 100%;"></div>
+        <div id="chartContainer_divisionPie" style="height: 400px;" class="col-12 col-md-6"></div>
         <script>
             window.addEventListener("load", function () {
             
@@ -84,7 +88,8 @@
             
             });
         </script>
-        <h2>Test:</h2>
+        </div>
+        <hr>
         <div id="chartContainer" style="height: 300px; width: 100%;"></div>
         <script>
             window.addEventListener("load", function () {
@@ -93,20 +98,21 @@
                     animationEnabled: true,
                     theme: "light2", // "light1", "light2", "dark1", "dark2"
                     title:{
-                        text: "Title"
+                        text: "Subject value"
                     },
                     axisY: {
                         title: "value"
                     },
                     data: [{        
                         type: "column",
-                        dataPoints: (<%- JSON.stringify(data.dateValue) %>).map(x=>({y:+x.value, label:x.date}))
+                        dataPoints: (<%- JSON.stringify(data.subjectValue) %>).map(x=>({y:+x.value, label:x.subject}))
                     }]
                 });
                 chart.render();
             
             });
         </script>
+        <hr>
         <div id="chartContainer2" style="height: 300px; width: 100%;"></div>
         <script>
             window.addEventListener("load", function () {
@@ -115,14 +121,14 @@
                     animationEnabled: true,
                     theme: "light2", // "light1", "light2", "dark1", "dark2"
                     title:{
-                        text: "Title"
+                        text: "Subject total"
                     },
                     axisY: {
                         title: "total"
                     },
                     data: [{        
                         type: "column",
-                        dataPoints: (<%- JSON.stringify(data.dateTotal) %>).map(x=>({y:+x.total, label:x.date}))
+                        dataPoints: (<%- JSON.stringify(data.subjectTotal) %>).map(x=>({y:+x.total, label:x.subject}))
                     }]
                 });
                 chart.render();
