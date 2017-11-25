@@ -46,6 +46,7 @@
 
 ## it.8 (2017/11/21 - 2017/11/27)
 - Néhány unit test
-- Statisztikák felület
+- Statisztikák felület: admin felhasználok számára elérhető statisztikák
+- Mentett keresések: részletes keresések mentése megadott néven, mentett keresések elérése legördülő listából
 - Swagger api leírás frissítése
 - Dokumentációk elkészítése
